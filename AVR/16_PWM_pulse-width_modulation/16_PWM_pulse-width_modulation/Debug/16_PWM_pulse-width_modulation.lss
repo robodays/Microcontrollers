@@ -1,0 +1,209 @@
+
+16_PWM_pulse-width_modulation.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000de  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  00000132  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  00000132  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000164  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000020  00000000  00000000  000001a0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000005d9  00000000  00000000  000001c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000051b  00000000  00000000  00000799  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000029f  00000000  00000000  00000cb4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000024  00000000  00000000  00000f54  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000318  00000000  00000000  00000f78  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000090  00000000  00000000  00001290  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000010  00000000  00000000  00001320  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	19 c0       	rjmp	.+50     	; 0x36 <__bad_interrupt>
+   4:	18 c0       	rjmp	.+48     	; 0x36 <__bad_interrupt>
+   6:	17 c0       	rjmp	.+46     	; 0x36 <__bad_interrupt>
+   8:	16 c0       	rjmp	.+44     	; 0x36 <__bad_interrupt>
+   a:	15 c0       	rjmp	.+42     	; 0x36 <__bad_interrupt>
+   c:	14 c0       	rjmp	.+40     	; 0x36 <__bad_interrupt>
+   e:	13 c0       	rjmp	.+38     	; 0x36 <__bad_interrupt>
+  10:	12 c0       	rjmp	.+36     	; 0x36 <__bad_interrupt>
+  12:	11 c0       	rjmp	.+34     	; 0x36 <__bad_interrupt>
+  14:	10 c0       	rjmp	.+32     	; 0x36 <__bad_interrupt>
+  16:	0f c0       	rjmp	.+30     	; 0x36 <__bad_interrupt>
+  18:	0e c0       	rjmp	.+28     	; 0x36 <__bad_interrupt>
+  1a:	0d c0       	rjmp	.+26     	; 0x36 <__bad_interrupt>
+  1c:	0c c0       	rjmp	.+24     	; 0x36 <__bad_interrupt>
+  1e:	0b c0       	rjmp	.+22     	; 0x36 <__bad_interrupt>
+  20:	0a c0       	rjmp	.+20     	; 0x36 <__bad_interrupt>
+  22:	09 c0       	rjmp	.+18     	; 0x36 <__bad_interrupt>
+  24:	08 c0       	rjmp	.+16     	; 0x36 <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+  32:	02 d0       	rcall	.+4      	; 0x38 <main>
+  34:	52 c0       	rjmp	.+164    	; 0xda <_exit>
+
+00000036 <__bad_interrupt>:
+  36:	e4 cf       	rjmp	.-56     	; 0x0 <__vectors>
+
+00000038 <main>:
+	//TCCR1A |= (1<<COM1A1);
+	//TCCR1A &= ~(1<<COM1A0);
+	
+	//Set OC1A/OC1B on Compare Match, clear OC1A/OC1B at BOTTOM, (inverting mode)
+	//Bit 7:6 – COM1A1:0: Compare Output Mode for channel A
+	TCCR1A |= (1<<COM1A1) | (1<<COM1A0);
+  38:	8f b5       	in	r24, 0x2f	; 47
+  3a:	80 6c       	ori	r24, 0xC0	; 192
+  3c:	8f bd       	out	0x2f, r24	; 47
+	//TCCR1B |= (1<<WGM12);
+	//TCCR1B &= ~(1<<WGM13);
+
+	//PWM, Phase Correct, 10-bit
+	//Bit 1:0 – WGM11:0: Waveform Generation Mode
+	TCCR1A |= (1<<WGM10);
+  3e:	8f b5       	in	r24, 0x2f	; 47
+  40:	81 60       	ori	r24, 0x01	; 1
+  42:	8f bd       	out	0x2f, r24	; 47
+	TCCR1A |= (1<<WGM11);
+  44:	8f b5       	in	r24, 0x2f	; 47
+  46:	82 60       	ori	r24, 0x02	; 2
+  48:	8f bd       	out	0x2f, r24	; 47
+	//Bit 4:3 – WGM13:2: Waveform Generation Mode
+	//See TCCR1A Register description.
+	TCCR1B &= ~(1<<WGM12);
+  4a:	8e b5       	in	r24, 0x2e	; 46
+  4c:	87 7f       	andi	r24, 0xF7	; 247
+  4e:	8e bd       	out	0x2e, r24	; 46
+	TCCR1B &= ~(1<<WGM13);
+  50:	8e b5       	in	r24, 0x2e	; 46
+  52:	8f 7e       	andi	r24, 0xEF	; 239
+  54:	8e bd       	out	0x2e, r24	; 46
+
+	//clkI/O/8 (From prescaler)
+	//Bit 2:0 – CS12:0: Clock Select
+	TCCR1B |= (1<<CS11);
+  56:	8e b5       	in	r24, 0x2e	; 46
+  58:	82 60       	ori	r24, 0x02	; 2
+  5a:	8e bd       	out	0x2e, r24	; 46
+	TCCR1B &= ~(1<<CS10);
+  5c:	8e b5       	in	r24, 0x2e	; 46
+  5e:	8e 7f       	andi	r24, 0xFE	; 254
+  60:	8e bd       	out	0x2e, r24	; 46
+	TCCR1B &= ~(1<<CS12);
+  62:	8e b5       	in	r24, 0x2e	; 46
+  64:	8b 7f       	andi	r24, 0xFB	; 251
+  66:	8e bd       	out	0x2e, r24	; 46
+
+	//Output Compare Register 1 A
+	OCR1A = 511;
+  68:	8f ef       	ldi	r24, 0xFF	; 255
+  6a:	91 e0       	ldi	r25, 0x01	; 1
+  6c:	9b bd       	out	0x2b, r25	; 43
+  6e:	8a bd       	out	0x2a, r24	; 42
+	
+	DDRB |= (1<<1) | (1<<2);
+  70:	87 b3       	in	r24, 0x17	; 23
+  72:	86 60       	ori	r24, 0x06	; 6
+  74:	87 bb       	out	0x17, r24	; 23
+	
+	PORTB &= ~((1<<1) | (1<<2));
+  76:	88 b3       	in	r24, 0x18	; 24
+  78:	89 7f       	andi	r24, 0xF9	; 249
+  7a:	88 bb       	out	0x18, r24	; 24
+	
+	//button
+	DDRC = 0b0000000;
+  7c:	14 ba       	out	0x14, r1	; 20
+	PORTC = 0b0000011;
+  7e:	83 e0       	ldi	r24, 0x03	; 3
+  80:	85 bb       	out	0x15, r24	; 21
+	
+    while (1) 
+    {
+		if (~PINC & (1<<0)) {
+  82:	98 99       	sbic	0x13, 0	; 19
+  84:	14 c0       	rjmp	.+40     	; 0xae <__SREG__+0x6f>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  86:	8f e4       	ldi	r24, 0x4F	; 79
+  88:	93 ec       	ldi	r25, 0xC3	; 195
+  8a:	01 97       	sbiw	r24, 0x01	; 1
+  8c:	f1 f7       	brne	.-4      	; 0x8a <__SREG__+0x4b>
+  8e:	00 c0       	rjmp	.+0      	; 0x90 <__SREG__+0x51>
+  90:	00 00       	nop
+			_delay_ms(200);
+			OCR1A += 10;
+  92:	8a b5       	in	r24, 0x2a	; 42
+  94:	9b b5       	in	r25, 0x2b	; 43
+  96:	0a 96       	adiw	r24, 0x0a	; 10
+  98:	9b bd       	out	0x2b, r25	; 43
+  9a:	8a bd       	out	0x2a, r24	; 42
+			if (OCR1A >= 1013) {
+  9c:	8a b5       	in	r24, 0x2a	; 42
+  9e:	9b b5       	in	r25, 0x2b	; 43
+  a0:	85 3f       	cpi	r24, 0xF5	; 245
+  a2:	93 40       	sbci	r25, 0x03	; 3
+  a4:	20 f0       	brcs	.+8      	; 0xae <__SREG__+0x6f>
+				OCR1A = 511;
+  a6:	8f ef       	ldi	r24, 0xFF	; 255
+  a8:	91 e0       	ldi	r25, 0x01	; 1
+  aa:	9b bd       	out	0x2b, r25	; 43
+  ac:	8a bd       	out	0x2a, r24	; 42
+			}
+		}
+		if (~PINC & (1<<1)) {
+  ae:	99 99       	sbic	0x13, 1	; 19
+  b0:	e8 cf       	rjmp	.-48     	; 0x82 <__SREG__+0x43>
+  b2:	8f e4       	ldi	r24, 0x4F	; 79
+  b4:	93 ec       	ldi	r25, 0xC3	; 195
+  b6:	01 97       	sbiw	r24, 0x01	; 1
+  b8:	f1 f7       	brne	.-4      	; 0xb6 <__SREG__+0x77>
+  ba:	00 c0       	rjmp	.+0      	; 0xbc <__SREG__+0x7d>
+  bc:	00 00       	nop
+			_delay_ms(200);
+			OCR1A -= 10;
+  be:	8a b5       	in	r24, 0x2a	; 42
+  c0:	9b b5       	in	r25, 0x2b	; 43
+  c2:	0a 97       	sbiw	r24, 0x0a	; 10
+  c4:	9b bd       	out	0x2b, r25	; 43
+  c6:	8a bd       	out	0x2a, r24	; 42
+			if (OCR1A <= 10) {
+  c8:	8a b5       	in	r24, 0x2a	; 42
+  ca:	9b b5       	in	r25, 0x2b	; 43
+  cc:	0b 97       	sbiw	r24, 0x0b	; 11
+  ce:	c8 f6       	brcc	.-78     	; 0x82 <__SREG__+0x43>
+				OCR1A = 511;
+  d0:	8f ef       	ldi	r24, 0xFF	; 255
+  d2:	91 e0       	ldi	r25, 0x01	; 1
+  d4:	9b bd       	out	0x2b, r25	; 43
+  d6:	8a bd       	out	0x2a, r24	; 42
+  d8:	d4 cf       	rjmp	.-88     	; 0x82 <__SREG__+0x43>
+
+000000da <_exit>:
+  da:	f8 94       	cli
+
+000000dc <__stop_program>:
+  dc:	ff cf       	rjmp	.-2      	; 0xdc <__stop_program>

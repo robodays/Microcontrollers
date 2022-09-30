@@ -1,0 +1,263 @@
+
+10_Interrupt_Timer_Counter.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000013e  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  00000192  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  00000192  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000001c4  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000028  00000000  00000000  00000200  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000006ed  00000000  00000000  00000228  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000056a  00000000  00000000  00000915  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000002ee  00000000  00000000  00000e7f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000050  00000000  00000000  00001170  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000031d  00000000  00000000  000011c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000001e2  00000000  00000000  000014dd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000018  00000000  00000000  000016bf  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	19 c0       	rjmp	.+50     	; 0x36 <__bad_interrupt>
+   4:	18 c0       	rjmp	.+48     	; 0x36 <__bad_interrupt>
+   6:	17 c0       	rjmp	.+46     	; 0x36 <__bad_interrupt>
+   8:	16 c0       	rjmp	.+44     	; 0x36 <__bad_interrupt>
+   a:	15 c0       	rjmp	.+42     	; 0x36 <__bad_interrupt>
+   c:	14 c0       	rjmp	.+40     	; 0x36 <__bad_interrupt>
+   e:	13 c0       	rjmp	.+38     	; 0x36 <__bad_interrupt>
+  10:	13 c0       	rjmp	.+38     	; 0x38 <__vector_8>
+  12:	11 c0       	rjmp	.+34     	; 0x36 <__bad_interrupt>
+  14:	10 c0       	rjmp	.+32     	; 0x36 <__bad_interrupt>
+  16:	0f c0       	rjmp	.+30     	; 0x36 <__bad_interrupt>
+  18:	0e c0       	rjmp	.+28     	; 0x36 <__bad_interrupt>
+  1a:	0d c0       	rjmp	.+26     	; 0x36 <__bad_interrupt>
+  1c:	0c c0       	rjmp	.+24     	; 0x36 <__bad_interrupt>
+  1e:	0b c0       	rjmp	.+22     	; 0x36 <__bad_interrupt>
+  20:	0a c0       	rjmp	.+20     	; 0x36 <__bad_interrupt>
+  22:	09 c0       	rjmp	.+18     	; 0x36 <__bad_interrupt>
+  24:	08 c0       	rjmp	.+16     	; 0x36 <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+  32:	49 d0       	rcall	.+146    	; 0xc6 <main>
+  34:	82 c0       	rjmp	.+260    	; 0x13a <_exit>
+
+00000036 <__bad_interrupt>:
+  36:	e4 cf       	rjmp	.-56     	; 0x0 <__vectors>
+
+00000038 <__vector_8>:
+#define F_CPU 1000000UL
+#include <avr/io.h>
+#include <util/delay.h>
+#include <avr/interrupt.h>
+
+ISR(TIMER1_OVF_vect) {
+  38:	1f 92       	push	r1
+  3a:	0f 92       	push	r0
+  3c:	0f b6       	in	r0, 0x3f	; 63
+  3e:	0f 92       	push	r0
+  40:	11 24       	eor	r1, r1
+  42:	2f 93       	push	r18
+  44:	8f 93       	push	r24
+  46:	9f 93       	push	r25
+	TCCR1B = 0b00000000; // stop timer
+  48:	1e bc       	out	0x2e, r1	; 46
+	PORTD |=(1<<0);
+  4a:	82 b3       	in	r24, 0x12	; 18
+  4c:	81 60       	ori	r24, 0x01	; 1
+  4e:	82 bb       	out	0x12, r24	; 18
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  50:	2f e3       	ldi	r18, 0x3F	; 63
+  52:	8d e0       	ldi	r24, 0x0D	; 13
+  54:	93 e0       	ldi	r25, 0x03	; 3
+  56:	21 50       	subi	r18, 0x01	; 1
+  58:	80 40       	sbci	r24, 0x00	; 0
+  5a:	90 40       	sbci	r25, 0x00	; 0
+  5c:	e1 f7       	brne	.-8      	; 0x56 <__SREG__+0x17>
+  5e:	00 c0       	rjmp	.+0      	; 0x60 <__SREG__+0x21>
+  60:	00 00       	nop
+	_delay_ms(1000);
+	PORTD &=~(1<<0);
+  62:	82 b3       	in	r24, 0x12	; 18
+  64:	8e 7f       	andi	r24, 0xFE	; 254
+  66:	82 bb       	out	0x12, r24	; 18
+  68:	2f e3       	ldi	r18, 0x3F	; 63
+  6a:	8d e0       	ldi	r24, 0x0D	; 13
+  6c:	93 e0       	ldi	r25, 0x03	; 3
+  6e:	21 50       	subi	r18, 0x01	; 1
+  70:	80 40       	sbci	r24, 0x00	; 0
+  72:	90 40       	sbci	r25, 0x00	; 0
+  74:	e1 f7       	brne	.-8      	; 0x6e <__SREG__+0x2f>
+  76:	00 c0       	rjmp	.+0      	; 0x78 <__SREG__+0x39>
+  78:	00 00       	nop
+	_delay_ms(1000);
+	PORTD |=(1<<0);
+  7a:	82 b3       	in	r24, 0x12	; 18
+  7c:	81 60       	ori	r24, 0x01	; 1
+  7e:	82 bb       	out	0x12, r24	; 18
+  80:	2f e3       	ldi	r18, 0x3F	; 63
+  82:	8d e0       	ldi	r24, 0x0D	; 13
+  84:	93 e0       	ldi	r25, 0x03	; 3
+  86:	21 50       	subi	r18, 0x01	; 1
+  88:	80 40       	sbci	r24, 0x00	; 0
+  8a:	90 40       	sbci	r25, 0x00	; 0
+  8c:	e1 f7       	brne	.-8      	; 0x86 <__SREG__+0x47>
+  8e:	00 c0       	rjmp	.+0      	; 0x90 <__SREG__+0x51>
+  90:	00 00       	nop
+	_delay_ms(1000);
+	PORTD &=~(1<<0);
+  92:	82 b3       	in	r24, 0x12	; 18
+  94:	8e 7f       	andi	r24, 0xFE	; 254
+  96:	82 bb       	out	0x12, r24	; 18
+  98:	2f e3       	ldi	r18, 0x3F	; 63
+  9a:	8d e0       	ldi	r24, 0x0D	; 13
+  9c:	93 e0       	ldi	r25, 0x03	; 3
+  9e:	21 50       	subi	r18, 0x01	; 1
+  a0:	80 40       	sbci	r24, 0x00	; 0
+  a2:	90 40       	sbci	r25, 0x00	; 0
+  a4:	e1 f7       	brne	.-8      	; 0x9e <__SREG__+0x5f>
+  a6:	00 c0       	rjmp	.+0      	; 0xa8 <__SREG__+0x69>
+  a8:	00 00       	nop
+	_delay_ms(1000);
+	TCCR1B = 0b00000011; // start timer
+  aa:	83 e0       	ldi	r24, 0x03	; 3
+  ac:	8e bd       	out	0x2e, r24	; 46
+	TCNT1 = 5000; // start with 5000 
+  ae:	88 e8       	ldi	r24, 0x88	; 136
+  b0:	93 e1       	ldi	r25, 0x13	; 19
+  b2:	9d bd       	out	0x2d, r25	; 45
+  b4:	8c bd       	out	0x2c, r24	; 44
+}
+  b6:	9f 91       	pop	r25
+  b8:	8f 91       	pop	r24
+  ba:	2f 91       	pop	r18
+  bc:	0f 90       	pop	r0
+  be:	0f be       	out	0x3f, r0	; 63
+  c0:	0f 90       	pop	r0
+  c2:	1f 90       	pop	r1
+  c4:	18 95       	reti
+
+000000c6 <main>:
+
+
+int main(void)
+{
+
+	DDRC = 0b0111111;
+  c6:	8f e3       	ldi	r24, 0x3F	; 63
+  c8:	84 bb       	out	0x14, r24	; 20
+	PORTC = 0b0000000; // 6 LED
+  ca:	15 ba       	out	0x15, r1	; 21
+	
+	DDRD |= (1<<0);
+  cc:	81 b3       	in	r24, 0x11	; 17
+  ce:	81 60       	ori	r24, 0x01	; 1
+  d0:	81 bb       	out	0x11, r24	; 17
+	PORTD &= ~(1<<0); //one LED
+  d2:	82 b3       	in	r24, 0x12	; 18
+  d4:	8e 7f       	andi	r24, 0xFE	; 254
+  d6:	82 bb       	out	0x12, r24	; 18
+	
+	TIMSK |= (1<<2); // Bit 2 – TOIE1: Timer/Counter1, Overflow Interrupt Enable
+  d8:	89 b7       	in	r24, 0x39	; 57
+  da:	84 60       	ori	r24, 0x04	; 4
+  dc:	89 bf       	out	0x39, r24	; 57
+	TCCR1B = 0b00000011; // clkI/O/64 (From prescaler)
+  de:	83 e0       	ldi	r24, 0x03	; 3
+  e0:	8e bd       	out	0x2e, r24	; 46
+	TCNT1 = 0; // Timer/Counter
+  e2:	1d bc       	out	0x2d, r1	; 45
+  e4:	1c bc       	out	0x2c, r1	; 44
+	
+	SREG |= (1<<7); // Status Register -> Bit 7 – I: Global Interrupt Enable
+  e6:	8f b7       	in	r24, 0x3f	; 63
+  e8:	80 68       	ori	r24, 0x80	; 128
+  ea:	8f bf       	out	0x3f, r24	; 63
+	// or
+	//sei();
+	
+	while (1)
+	{
+		for(int i = 0; i < 6; i++) {
+  ec:	20 e0       	ldi	r18, 0x00	; 0
+  ee:	30 e0       	ldi	r19, 0x00	; 0
+  f0:	16 c0       	rjmp	.+44     	; 0x11e <main+0x58>
+			PORTC |= (1<<i);
+  f2:	45 b3       	in	r20, 0x15	; 21
+  f4:	81 e0       	ldi	r24, 0x01	; 1
+  f6:	90 e0       	ldi	r25, 0x00	; 0
+  f8:	02 2e       	mov	r0, r18
+  fa:	02 c0       	rjmp	.+4      	; 0x100 <main+0x3a>
+  fc:	88 0f       	add	r24, r24
+  fe:	99 1f       	adc	r25, r25
+ 100:	0a 94       	dec	r0
+ 102:	e2 f7       	brpl	.-8      	; 0xfc <main+0x36>
+ 104:	84 2b       	or	r24, r20
+ 106:	85 bb       	out	0x15, r24	; 21
+ 108:	4f e5       	ldi	r20, 0x5F	; 95
+ 10a:	8a ee       	ldi	r24, 0xEA	; 234
+ 10c:	90 e0       	ldi	r25, 0x00	; 0
+ 10e:	41 50       	subi	r20, 0x01	; 1
+ 110:	80 40       	sbci	r24, 0x00	; 0
+ 112:	90 40       	sbci	r25, 0x00	; 0
+ 114:	e1 f7       	brne	.-8      	; 0x10e <main+0x48>
+ 116:	00 c0       	rjmp	.+0      	; 0x118 <main+0x52>
+ 118:	00 00       	nop
+	// or
+	//sei();
+	
+	while (1)
+	{
+		for(int i = 0; i < 6; i++) {
+ 11a:	2f 5f       	subi	r18, 0xFF	; 255
+ 11c:	3f 4f       	sbci	r19, 0xFF	; 255
+ 11e:	26 30       	cpi	r18, 0x06	; 6
+ 120:	31 05       	cpc	r19, r1
+ 122:	3c f3       	brlt	.-50     	; 0xf2 <main+0x2c>
+			_delay_ms(300);
+		}
+		
+
+
+		PORTC = 0b0000000;
+ 124:	15 ba       	out	0x15, r1	; 21
+ 126:	2f e5       	ldi	r18, 0x5F	; 95
+ 128:	4a ee       	ldi	r20, 0xEA	; 234
+ 12a:	80 e0       	ldi	r24, 0x00	; 0
+ 12c:	21 50       	subi	r18, 0x01	; 1
+ 12e:	40 40       	sbci	r20, 0x00	; 0
+ 130:	80 40       	sbci	r24, 0x00	; 0
+ 132:	e1 f7       	brne	.-8      	; 0x12c <main+0x66>
+ 134:	00 c0       	rjmp	.+0      	; 0x136 <main+0x70>
+ 136:	00 00       	nop
+ 138:	d9 cf       	rjmp	.-78     	; 0xec <main+0x26>
+
+0000013a <_exit>:
+ 13a:	f8 94       	cli
+
+0000013c <__stop_program>:
+ 13c:	ff cf       	rjmp	.-2      	; 0x13c <__stop_program>
