@@ -1,0 +1,317 @@
+
+27_2_Shift_register_74HC595_7seg.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000001a2  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000014  00800060  000001a2  00000216  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  0000022a  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000025c  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000030  00000000  00000000  00000298  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000070e  00000000  00000000  000002c8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000005d7  00000000  00000000  000009d6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000002e5  00000000  00000000  00000fad  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000058  00000000  00000000  00001294  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000337  00000000  00000000  000012ec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000001b4  00000000  00000000  00001623  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000020  00000000  00000000  000017d7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	24 c0       	rjmp	.+72     	; 0x4c <__bad_interrupt>
+   4:	23 c0       	rjmp	.+70     	; 0x4c <__bad_interrupt>
+   6:	22 c0       	rjmp	.+68     	; 0x4c <__bad_interrupt>
+   8:	21 c0       	rjmp	.+66     	; 0x4c <__bad_interrupt>
+   a:	20 c0       	rjmp	.+64     	; 0x4c <__bad_interrupt>
+   c:	1f c0       	rjmp	.+62     	; 0x4c <__bad_interrupt>
+   e:	1e c0       	rjmp	.+60     	; 0x4c <__bad_interrupt>
+  10:	1d c0       	rjmp	.+58     	; 0x4c <__bad_interrupt>
+  12:	1c c0       	rjmp	.+56     	; 0x4c <__bad_interrupt>
+  14:	1b c0       	rjmp	.+54     	; 0x4c <__bad_interrupt>
+  16:	1a c0       	rjmp	.+52     	; 0x4c <__bad_interrupt>
+  18:	19 c0       	rjmp	.+50     	; 0x4c <__bad_interrupt>
+  1a:	18 c0       	rjmp	.+48     	; 0x4c <__bad_interrupt>
+  1c:	17 c0       	rjmp	.+46     	; 0x4c <__bad_interrupt>
+  1e:	16 c0       	rjmp	.+44     	; 0x4c <__bad_interrupt>
+  20:	15 c0       	rjmp	.+42     	; 0x4c <__bad_interrupt>
+  22:	14 c0       	rjmp	.+40     	; 0x4c <__bad_interrupt>
+  24:	13 c0       	rjmp	.+38     	; 0x4c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	e2 ea       	ldi	r30, 0xA2	; 162
+  3a:	f1 e0       	ldi	r31, 0x01	; 1
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <__SREG__+0x3>
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+  42:	a4 37       	cpi	r26, 0x74	; 116
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <__SP_H__>
+  48:	92 d0       	rcall	.+292    	; 0x16e <main>
+  4a:	a9 c0       	rjmp	.+338    	; 0x19e <_exit>
+
+0000004c <__bad_interrupt>:
+  4c:	d9 cf       	rjmp	.-78     	; 0x0 <__vectors>
+
+0000004e <HC595>:
+
+
+
+void HC595 (uint8_t byte)
+{
+	for(int i=0; i<=7; i++)
+  4e:	20 e0       	ldi	r18, 0x00	; 0
+  50:	30 e0       	ldi	r19, 0x00	; 0
+  52:	21 c0       	rjmp	.+66     	; 0x96 <HC595+0x48>
+	{
+		if (byte&(1<<i)) PORTD |= (1<<0);
+  54:	48 2f       	mov	r20, r24
+  56:	50 e0       	ldi	r21, 0x00	; 0
+  58:	02 2e       	mov	r0, r18
+  5a:	02 c0       	rjmp	.+4      	; 0x60 <HC595+0x12>
+  5c:	55 95       	asr	r21
+  5e:	47 95       	ror	r20
+  60:	0a 94       	dec	r0
+  62:	e2 f7       	brpl	.-8      	; 0x5c <HC595+0xe>
+  64:	40 ff       	sbrs	r20, 0
+  66:	04 c0       	rjmp	.+8      	; 0x70 <HC595+0x22>
+  68:	92 b3       	in	r25, 0x12	; 18
+  6a:	91 60       	ori	r25, 0x01	; 1
+  6c:	92 bb       	out	0x12, r25	; 18
+  6e:	03 c0       	rjmp	.+6      	; 0x76 <HC595+0x28>
+		else PORTD &= ~(1<<0);
+  70:	92 b3       	in	r25, 0x12	; 18
+  72:	9e 7f       	andi	r25, 0xFE	; 254
+  74:	92 bb       	out	0x12, r25	; 18
+		
+		PORTD |= (1<<1); // Линия тактирования
+  76:	92 b3       	in	r25, 0x12	; 18
+  78:	92 60       	ori	r25, 0x02	; 2
+  7a:	92 bb       	out	0x12, r25	; 18
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  7c:	93 e0       	ldi	r25, 0x03	; 3
+  7e:	9a 95       	dec	r25
+  80:	f1 f7       	brne	.-4      	; 0x7e <HC595+0x30>
+  82:	00 00       	nop
+		_delay_us(10);
+		PORTD &= ~(1<<1);
+  84:	92 b3       	in	r25, 0x12	; 18
+  86:	9d 7f       	andi	r25, 0xFD	; 253
+  88:	92 bb       	out	0x12, r25	; 18
+  8a:	93 e0       	ldi	r25, 0x03	; 3
+  8c:	9a 95       	dec	r25
+  8e:	f1 f7       	brne	.-4      	; 0x8c <HC595+0x3e>
+  90:	00 00       	nop
+
+
+
+void HC595 (uint8_t byte)
+{
+	for(int i=0; i<=7; i++)
+  92:	2f 5f       	subi	r18, 0xFF	; 255
+  94:	3f 4f       	sbci	r19, 0xFF	; 255
+  96:	28 30       	cpi	r18, 0x08	; 8
+  98:	31 05       	cpc	r19, r1
+  9a:	e4 f2       	brlt	.-72     	; 0x54 <HC595+0x6>
+		PORTD &= ~(1<<1);
+		_delay_us(10);
+	}
+	
+	
+	PORTD |= (1<<2); // Линия защелки
+  9c:	82 b3       	in	r24, 0x12	; 18
+  9e:	84 60       	ori	r24, 0x04	; 4
+  a0:	82 bb       	out	0x12, r24	; 18
+  a2:	83 e0       	ldi	r24, 0x03	; 3
+  a4:	8a 95       	dec	r24
+  a6:	f1 f7       	brne	.-4      	; 0xa4 <HC595+0x56>
+  a8:	00 00       	nop
+	_delay_us(10);
+	PORTD &= ~(1<<2);
+  aa:	82 b3       	in	r24, 0x12	; 18
+  ac:	8b 7f       	andi	r24, 0xFB	; 251
+  ae:	82 bb       	out	0x12, r24	; 18
+  b0:	93 e0       	ldi	r25, 0x03	; 3
+  b2:	9a 95       	dec	r25
+  b4:	f1 f7       	brne	.-4      	; 0xb2 <HC595+0x64>
+  b6:	00 00       	nop
+  b8:	08 95       	ret
+
+000000ba <number>:
+	0b01101111 //9
+};
+
+
+void number (unsigned int num)
+{
+  ba:	0f 93       	push	r16
+  bc:	1f 93       	push	r17
+  be:	cf 93       	push	r28
+  c0:	df 93       	push	r29
+  c2:	ec 01       	movw	r28, r24
+	HC595(didits[num%10]);//еденици	
+  c4:	9c 01       	movw	r18, r24
+  c6:	ad ec       	ldi	r26, 0xCD	; 205
+  c8:	bc ec       	ldi	r27, 0xCC	; 204
+  ca:	5d d0       	rcall	.+186    	; 0x186 <__umulhisi3>
+  cc:	96 95       	lsr	r25
+  ce:	87 95       	ror	r24
+  d0:	96 95       	lsr	r25
+  d2:	87 95       	ror	r24
+  d4:	96 95       	lsr	r25
+  d6:	87 95       	ror	r24
+  d8:	9c 01       	movw	r18, r24
+  da:	22 0f       	add	r18, r18
+  dc:	33 1f       	adc	r19, r19
+  de:	88 0f       	add	r24, r24
+  e0:	99 1f       	adc	r25, r25
+  e2:	88 0f       	add	r24, r24
+  e4:	99 1f       	adc	r25, r25
+  e6:	88 0f       	add	r24, r24
+  e8:	99 1f       	adc	r25, r25
+  ea:	82 0f       	add	r24, r18
+  ec:	93 1f       	adc	r25, r19
+  ee:	9e 01       	movw	r18, r28
+  f0:	28 1b       	sub	r18, r24
+  f2:	39 0b       	sbc	r19, r25
+  f4:	c9 01       	movw	r24, r18
+  f6:	88 0f       	add	r24, r24
+  f8:	99 1f       	adc	r25, r25
+  fa:	fc 01       	movw	r30, r24
+  fc:	e0 5a       	subi	r30, 0xA0	; 160
+  fe:	ff 4f       	sbci	r31, 0xFF	; 255
+ 100:	80 81       	ld	r24, Z
+ 102:	a5 df       	rcall	.-182    	; 0x4e <HC595>
+	HC595(didits[num%100/10] | (1<<7));//десятки	
+ 104:	8e 01       	movw	r16, r28
+ 106:	16 95       	lsr	r17
+ 108:	07 95       	ror	r16
+ 10a:	16 95       	lsr	r17
+ 10c:	07 95       	ror	r16
+ 10e:	98 01       	movw	r18, r16
+ 110:	ab e7       	ldi	r26, 0x7B	; 123
+ 112:	b4 e1       	ldi	r27, 0x14	; 20
+ 114:	38 d0       	rcall	.+112    	; 0x186 <__umulhisi3>
+ 116:	9c 01       	movw	r18, r24
+ 118:	36 95       	lsr	r19
+ 11a:	27 95       	ror	r18
+ 11c:	44 e6       	ldi	r20, 0x64	; 100
+ 11e:	42 9f       	mul	r20, r18
+ 120:	c0 01       	movw	r24, r0
+ 122:	43 9f       	mul	r20, r19
+ 124:	90 0d       	add	r25, r0
+ 126:	11 24       	eor	r1, r1
+ 128:	9e 01       	movw	r18, r28
+ 12a:	28 1b       	sub	r18, r24
+ 12c:	39 0b       	sbc	r19, r25
+ 12e:	ad ec       	ldi	r26, 0xCD	; 205
+ 130:	bc ec       	ldi	r27, 0xCC	; 204
+ 132:	29 d0       	rcall	.+82     	; 0x186 <__umulhisi3>
+ 134:	96 95       	lsr	r25
+ 136:	87 95       	ror	r24
+ 138:	96 95       	lsr	r25
+ 13a:	87 95       	ror	r24
+ 13c:	96 95       	lsr	r25
+ 13e:	87 95       	ror	r24
+ 140:	fc 01       	movw	r30, r24
+ 142:	ee 0f       	add	r30, r30
+ 144:	ff 1f       	adc	r31, r31
+ 146:	e0 5a       	subi	r30, 0xA0	; 160
+ 148:	ff 4f       	sbci	r31, 0xFF	; 255
+ 14a:	80 81       	ld	r24, Z
+ 14c:	80 68       	ori	r24, 0x80	; 128
+ 14e:	7f df       	rcall	.-258    	; 0x4e <HC595>
+	HC595(didits[num/100]);//сотни
+ 150:	98 01       	movw	r18, r16
+ 152:	ab e7       	ldi	r26, 0x7B	; 123
+ 154:	b4 e1       	ldi	r27, 0x14	; 20
+ 156:	17 d0       	rcall	.+46     	; 0x186 <__umulhisi3>
+ 158:	8e 7f       	andi	r24, 0xFE	; 254
+ 15a:	fc 01       	movw	r30, r24
+ 15c:	e0 5a       	subi	r30, 0xA0	; 160
+ 15e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 160:	80 81       	ld	r24, Z
+ 162:	75 df       	rcall	.-278    	; 0x4e <HC595>
+
+
+	
+	
+}
+ 164:	df 91       	pop	r29
+ 166:	cf 91       	pop	r28
+ 168:	1f 91       	pop	r17
+ 16a:	0f 91       	pop	r16
+ 16c:	08 95       	ret
+
+0000016e <main>:
+}
+
+
+int main(void)
+{
+	DDRD = 0xff;
+ 16e:	8f ef       	ldi	r24, 0xFF	; 255
+ 170:	81 bb       	out	0x11, r24	; 17
+	PORTD &= ~((1<<2) | (1<<1) | (1<<0));
+ 172:	82 b3       	in	r24, 0x12	; 18
+ 174:	88 7f       	andi	r24, 0xF8	; 248
+ 176:	82 bb       	out	0x12, r24	; 18
+	PORTD |= (1<<3); // Reset
+ 178:	82 b3       	in	r24, 0x12	; 18
+ 17a:	88 60       	ori	r24, 0x08	; 8
+ 17c:	82 bb       	out	0x12, r24	; 18
+	
+	number(456);
+ 17e:	88 ec       	ldi	r24, 0xC8	; 200
+ 180:	91 e0       	ldi	r25, 0x01	; 1
+ 182:	9b df       	rcall	.-202    	; 0xba <number>
+ 184:	ff cf       	rjmp	.-2      	; 0x184 <main+0x16>
+
+00000186 <__umulhisi3>:
+ 186:	a2 9f       	mul	r26, r18
+ 188:	b0 01       	movw	r22, r0
+ 18a:	b3 9f       	mul	r27, r19
+ 18c:	c0 01       	movw	r24, r0
+ 18e:	a3 9f       	mul	r26, r19
+ 190:	01 d0       	rcall	.+2      	; 0x194 <__umulhisi3+0xe>
+ 192:	b2 9f       	mul	r27, r18
+ 194:	70 0d       	add	r23, r0
+ 196:	81 1d       	adc	r24, r1
+ 198:	11 24       	eor	r1, r1
+ 19a:	91 1d       	adc	r25, r1
+ 19c:	08 95       	ret
+
+0000019e <_exit>:
+ 19e:	f8 94       	cli
+
+000001a0 <__stop_program>:
+ 1a0:	ff cf       	rjmp	.-2      	; 0x1a0 <__stop_program>

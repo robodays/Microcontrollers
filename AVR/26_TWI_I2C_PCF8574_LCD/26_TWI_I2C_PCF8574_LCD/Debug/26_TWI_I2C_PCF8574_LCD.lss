@@ -1,0 +1,937 @@
+
+26_TWI_I2C_PCF8574_LCD.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000458  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000014  00800060  00000458  000004ec  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000001  00800074  00800074  00000500  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000500  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000530  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000000b0  00000000  00000000  0000056c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000146f  00000000  00000000  0000061c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 0000068a  00000000  00000000  00001a8b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000783  00000000  00000000  00002115  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  0000017c  00000000  00000000  00002898  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000410  00000000  00000000  00002a14  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000b01  00000000  00000000  00002e24  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000000a0  00000000  00000000  00003925  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	2c c0       	rjmp	.+88     	; 0x5c <__bad_interrupt>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	25 c0       	rjmp	.+74     	; 0x5c <__bad_interrupt>
+  12:	24 c0       	rjmp	.+72     	; 0x5c <__bad_interrupt>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	e8 e5       	ldi	r30, 0x58	; 88
+  3a:	f4 e0       	ldi	r31, 0x04	; 4
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <__SREG__+0x3>
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+  42:	a4 37       	cpi	r26, 0x74	; 116
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <__SP_H__>
+
+00000048 <__do_clear_bss>:
+  48:	20 e0       	ldi	r18, 0x00	; 0
+  4a:	a4 e7       	ldi	r26, 0x74	; 116
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	a5 37       	cpi	r26, 0x75	; 117
+  54:	b2 07       	cpc	r27, r18
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	c9 d1       	rcall	.+914    	; 0x3ec <main>
+  5a:	fc c1       	rjmp	.+1016   	; 0x454 <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <TWI_settings>:
+
+
+// Настройки TWI
+void TWI_settings (void)
+{
+	TWBR = 2; // Частота 50 кГц линии тактирования при fмк = 1 МГц
+  5e:	82 e0       	ldi	r24, 0x02	; 2
+  60:	80 b9       	out	0x00, r24	; 0
+	TWSR &= ~((1<<TWPS1) | (1<<TWPS0)); // Коэф. деления = 1
+  62:	81 b1       	in	r24, 0x01	; 1
+  64:	8c 7f       	andi	r24, 0xFC	; 252
+  66:	81 b9       	out	0x01, r24	; 1
+  68:	08 95       	ret
+
+0000006a <TWI_start>:
+
+
+// Старт TWI
+void TWI_start (void)
+{
+	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+  6a:	84 ea       	ldi	r24, 0xA4	; 164
+  6c:	86 bf       	out	0x36, r24	; 54
+	while (!(TWCR&(1<<TWINT)))
+  6e:	06 b6       	in	r0, 0x36	; 54
+  70:	07 fe       	sbrs	r0, 7
+  72:	fd cf       	rjmp	.-6      	; 0x6e <TWI_start+0x4>
+	;
+}
+  74:	08 95       	ret
+
+00000076 <TWI_stop>:
+
+
+// Стоп TWI
+void TWI_stop (void)
+{
+	TWCR = (1<<TWINT) | (1<<TWSTO) | (1<<TWEN);
+  76:	84 e9       	ldi	r24, 0x94	; 148
+  78:	86 bf       	out	0x36, r24	; 54
+  7a:	08 95       	ret
+
+0000007c <TWI_write_byte>:
+
+
+// Запись данных
+void TWI_write_byte (unsigned char twi_data)
+{
+	TWDR = twi_data;
+  7c:	83 b9       	out	0x03, r24	; 3
+	TWCR = (1<<TWINT) | (1<<TWEN);
+  7e:	84 e8       	ldi	r24, 0x84	; 132
+  80:	86 bf       	out	0x36, r24	; 54
+	while (!(TWCR&(1<<TWINT)))
+  82:	06 b6       	in	r0, 0x36	; 54
+  84:	07 fe       	sbrs	r0, 7
+  86:	fd cf       	rjmp	.-6      	; 0x82 <TWI_write_byte+0x6>
+	;
+}
+  88:	08 95       	ret
+
+0000008a <TWI_read_byte>:
+
+
+// Чтение данных
+unsigned char TWI_read_byte ()
+{
+	TWCR = (1<<TWEA) | (1<<TWINT) | (1<<TWEN);
+  8a:	84 ec       	ldi	r24, 0xC4	; 196
+  8c:	86 bf       	out	0x36, r24	; 54
+	while (!(TWCR&(1<<TWINT)))
+  8e:	06 b6       	in	r0, 0x36	; 54
+  90:	07 fe       	sbrs	r0, 7
+  92:	fd cf       	rjmp	.-6      	; 0x8e <TWI_read_byte+0x4>
+	;
+	
+	return TWDR;
+  94:	83 b1       	in	r24, 0x03	; 3
+}
+  96:	08 95       	ret
+
+00000098 <TWI_write_byte_addr_PCF>:
+
+// Запись данных + адрес для PCF8574
+void TWI_write_byte_addr_PCF(unsigned char twi_data)
+{
+  98:	cf 93       	push	r28
+  9a:	c8 2f       	mov	r28, r24
+	TWI_start();
+  9c:	e6 df       	rcall	.-52     	; 0x6a <TWI_start>
+	TWI_write_byte(0b01000110); // Адрес 011 + W для переходник + ЖК
+  9e:	86 e4       	ldi	r24, 0x46	; 70
+  a0:	ed df       	rcall	.-38     	; 0x7c <TWI_write_byte>
+	
+	TWI_write_byte(twi_data);
+  a2:	8c 2f       	mov	r24, r28
+  a4:	eb df       	rcall	.-42     	; 0x7c <TWI_write_byte>
+	TWI_stop();
+  a6:	e7 df       	rcall	.-50     	; 0x76 <TWI_stop>
+	
+}
+  a8:	cf 91       	pop	r28
+  aa:	08 95       	ret
+
+000000ac <LCD_commands>:
+
+
+// Настройки ЖК дисплея
+void LCD_commands(unsigned char command) {
+	PORTD = command;
+  ac:	82 bb       	out	0x12, r24	; 18
+	
+	RS_COMMAND;
+  ae:	92 b3       	in	r25, 0x12	; 18
+  b0:	9b 7f       	andi	r25, 0xFB	; 251
+  b2:	92 bb       	out	0x12, r25	; 18
+	E_1;
+  b4:	92 b3       	in	r25, 0x12	; 18
+  b6:	98 60       	ori	r25, 0x08	; 8
+  b8:	92 bb       	out	0x12, r25	; 18
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  ba:	90 e1       	ldi	r25, 0x10	; 16
+  bc:	9a 95       	dec	r25
+  be:	f1 f7       	brne	.-4      	; 0xbc <LCD_commands+0x10>
+  c0:	00 c0       	rjmp	.+0      	; 0xc2 <LCD_commands+0x16>
+	_delay_us(50);
+	E_0;
+  c2:	92 b3       	in	r25, 0x12	; 18
+  c4:	97 7f       	andi	r25, 0xF7	; 247
+  c6:	92 bb       	out	0x12, r25	; 18
+  c8:	90 e1       	ldi	r25, 0x10	; 16
+  ca:	9a 95       	dec	r25
+  cc:	f1 f7       	brne	.-4      	; 0xca <LCD_commands+0x1e>
+  ce:	00 c0       	rjmp	.+0      	; 0xd0 <LCD_commands+0x24>
+	_delay_us(50);
+	
+	PORTD = (command<<4);
+  d0:	82 95       	swap	r24
+  d2:	80 7f       	andi	r24, 0xF0	; 240
+  d4:	82 bb       	out	0x12, r24	; 18
+	
+	RS_COMMAND;
+  d6:	82 b3       	in	r24, 0x12	; 18
+  d8:	8b 7f       	andi	r24, 0xFB	; 251
+  da:	82 bb       	out	0x12, r24	; 18
+	E_1;
+  dc:	82 b3       	in	r24, 0x12	; 18
+  de:	88 60       	ori	r24, 0x08	; 8
+  e0:	82 bb       	out	0x12, r24	; 18
+  e2:	80 e1       	ldi	r24, 0x10	; 16
+  e4:	8a 95       	dec	r24
+  e6:	f1 f7       	brne	.-4      	; 0xe4 <LCD_commands+0x38>
+  e8:	00 c0       	rjmp	.+0      	; 0xea <LCD_commands+0x3e>
+	_delay_us(50);
+	E_0;
+  ea:	82 b3       	in	r24, 0x12	; 18
+  ec:	87 7f       	andi	r24, 0xF7	; 247
+  ee:	82 bb       	out	0x12, r24	; 18
+  f0:	90 e1       	ldi	r25, 0x10	; 16
+  f2:	9a 95       	dec	r25
+  f4:	f1 f7       	brne	.-4      	; 0xf2 <LCD_commands+0x46>
+  f6:	00 c0       	rjmp	.+0      	; 0xf8 <LCD_commands+0x4c>
+  f8:	08 95       	ret
+
+000000fa <LCD_commands_PCF>:
+	_delay_us(50);
+}
+
+// Настройки ЖК дисплея для PCF8574
+void LCD_commands_PCF(unsigned char command) {
+  fa:	cf 93       	push	r28
+  fc:	c8 2f       	mov	r28, r24
+	pcf_port = command;
+  fe:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+	TWI_write_byte_addr_PCF(pcf_port);
+ 102:	ca df       	rcall	.-108    	; 0x98 <TWI_write_byte_addr_PCF>
+	
+	RS_COMMAND_PCF;
+ 104:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__data_end>
+ 108:	8b 7f       	andi	r24, 0xFB	; 251
+ 10a:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+ 10e:	c4 df       	rcall	.-120    	; 0x98 <TWI_write_byte_addr_PCF>
+	E_1_PCF;
+ 110:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__data_end>
+ 114:	88 60       	ori	r24, 0x08	; 8
+ 116:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+ 11a:	be df       	rcall	.-132    	; 0x98 <TWI_write_byte_addr_PCF>
+ 11c:	80 e1       	ldi	r24, 0x10	; 16
+ 11e:	8a 95       	dec	r24
+ 120:	f1 f7       	brne	.-4      	; 0x11e <LCD_commands_PCF+0x24>
+ 122:	00 c0       	rjmp	.+0      	; 0x124 <LCD_commands_PCF+0x2a>
+	_delay_us(50);
+	E_0_PCF;
+ 124:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__data_end>
+ 128:	87 7f       	andi	r24, 0xF7	; 247
+ 12a:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+ 12e:	b4 df       	rcall	.-152    	; 0x98 <TWI_write_byte_addr_PCF>
+ 130:	80 e1       	ldi	r24, 0x10	; 16
+ 132:	8a 95       	dec	r24
+ 134:	f1 f7       	brne	.-4      	; 0x132 <LCD_commands_PCF+0x38>
+ 136:	00 c0       	rjmp	.+0      	; 0x138 <LCD_commands_PCF+0x3e>
+	_delay_us(50);
+	
+	pcf_port = (command<<4);
+ 138:	8c 2f       	mov	r24, r28
+ 13a:	82 95       	swap	r24
+ 13c:	80 7f       	andi	r24, 0xF0	; 240
+ 13e:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+	TWI_write_byte_addr_PCF(pcf_port);
+ 142:	aa df       	rcall	.-172    	; 0x98 <TWI_write_byte_addr_PCF>
+	
+	RS_COMMAND_PCF;
+ 144:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__data_end>
+ 148:	8b 7f       	andi	r24, 0xFB	; 251
+ 14a:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+ 14e:	a4 df       	rcall	.-184    	; 0x98 <TWI_write_byte_addr_PCF>
+	E_1_PCF;
+ 150:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__data_end>
+ 154:	88 60       	ori	r24, 0x08	; 8
+ 156:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+ 15a:	9e df       	rcall	.-196    	; 0x98 <TWI_write_byte_addr_PCF>
+ 15c:	80 e1       	ldi	r24, 0x10	; 16
+ 15e:	8a 95       	dec	r24
+ 160:	f1 f7       	brne	.-4      	; 0x15e <LCD_commands_PCF+0x64>
+ 162:	00 c0       	rjmp	.+0      	; 0x164 <LCD_commands_PCF+0x6a>
+	_delay_us(50);
+	E_0_PCF;
+ 164:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__data_end>
+ 168:	87 7f       	andi	r24, 0xF7	; 247
+ 16a:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+ 16e:	94 df       	rcall	.-216    	; 0x98 <TWI_write_byte_addr_PCF>
+ 170:	80 e1       	ldi	r24, 0x10	; 16
+ 172:	8a 95       	dec	r24
+ 174:	f1 f7       	brne	.-4      	; 0x172 <LCD_commands_PCF+0x78>
+ 176:	00 c0       	rjmp	.+0      	; 0x178 <LCD_commands_PCF+0x7e>
+	_delay_us(50);
+}
+ 178:	cf 91       	pop	r28
+ 17a:	08 95       	ret
+
+0000017c <LCD_data>:
+
+
+void LCD_data(unsigned char data) {
+	PORTD = data;
+ 17c:	82 bb       	out	0x12, r24	; 18
+
+	RS_DATA;
+ 17e:	92 b3       	in	r25, 0x12	; 18
+ 180:	94 60       	ori	r25, 0x04	; 4
+ 182:	92 bb       	out	0x12, r25	; 18
+	E_1;
+ 184:	92 b3       	in	r25, 0x12	; 18
+ 186:	98 60       	ori	r25, 0x08	; 8
+ 188:	92 bb       	out	0x12, r25	; 18
+ 18a:	90 e1       	ldi	r25, 0x10	; 16
+ 18c:	9a 95       	dec	r25
+ 18e:	f1 f7       	brne	.-4      	; 0x18c <LCD_data+0x10>
+ 190:	00 c0       	rjmp	.+0      	; 0x192 <LCD_data+0x16>
+	_delay_us(50);
+	E_0;
+ 192:	92 b3       	in	r25, 0x12	; 18
+ 194:	97 7f       	andi	r25, 0xF7	; 247
+ 196:	92 bb       	out	0x12, r25	; 18
+ 198:	90 e1       	ldi	r25, 0x10	; 16
+ 19a:	9a 95       	dec	r25
+ 19c:	f1 f7       	brne	.-4      	; 0x19a <LCD_data+0x1e>
+ 19e:	00 c0       	rjmp	.+0      	; 0x1a0 <LCD_data+0x24>
+	_delay_us(50);
+	
+	PORTD = (data<<4);
+ 1a0:	82 95       	swap	r24
+ 1a2:	80 7f       	andi	r24, 0xF0	; 240
+ 1a4:	82 bb       	out	0x12, r24	; 18
+	
+	RS_DATA;
+ 1a6:	82 b3       	in	r24, 0x12	; 18
+ 1a8:	84 60       	ori	r24, 0x04	; 4
+ 1aa:	82 bb       	out	0x12, r24	; 18
+	E_1;
+ 1ac:	82 b3       	in	r24, 0x12	; 18
+ 1ae:	88 60       	ori	r24, 0x08	; 8
+ 1b0:	82 bb       	out	0x12, r24	; 18
+ 1b2:	80 e1       	ldi	r24, 0x10	; 16
+ 1b4:	8a 95       	dec	r24
+ 1b6:	f1 f7       	brne	.-4      	; 0x1b4 <LCD_data+0x38>
+ 1b8:	00 c0       	rjmp	.+0      	; 0x1ba <LCD_data+0x3e>
+	_delay_us(50);
+	E_0;
+ 1ba:	82 b3       	in	r24, 0x12	; 18
+ 1bc:	87 7f       	andi	r24, 0xF7	; 247
+ 1be:	82 bb       	out	0x12, r24	; 18
+ 1c0:	90 e1       	ldi	r25, 0x10	; 16
+ 1c2:	9a 95       	dec	r25
+ 1c4:	f1 f7       	brne	.-4      	; 0x1c2 <LCD_data+0x46>
+ 1c6:	00 c0       	rjmp	.+0      	; 0x1c8 <LCD_data+0x4c>
+ 1c8:	08 95       	ret
+
+000001ca <LCD_data_PCF>:
+	_delay_us(50);
+}
+
+//LCD_data для PCF8574
+void LCD_data_PCF(unsigned char data) {
+ 1ca:	cf 93       	push	r28
+ 1cc:	c8 2f       	mov	r28, r24
+	pcf_port = data;
+ 1ce:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+	TWI_write_byte_addr_PCF(pcf_port);
+ 1d2:	62 df       	rcall	.-316    	; 0x98 <TWI_write_byte_addr_PCF>
+	
+	RS_DATA_PCF;
+ 1d4:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__data_end>
+ 1d8:	84 60       	ori	r24, 0x04	; 4
+ 1da:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+ 1de:	5c df       	rcall	.-328    	; 0x98 <TWI_write_byte_addr_PCF>
+	E_1_PCF;
+ 1e0:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__data_end>
+ 1e4:	88 60       	ori	r24, 0x08	; 8
+ 1e6:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+ 1ea:	56 df       	rcall	.-340    	; 0x98 <TWI_write_byte_addr_PCF>
+ 1ec:	80 e1       	ldi	r24, 0x10	; 16
+ 1ee:	8a 95       	dec	r24
+ 1f0:	f1 f7       	brne	.-4      	; 0x1ee <LCD_data_PCF+0x24>
+ 1f2:	00 c0       	rjmp	.+0      	; 0x1f4 <LCD_data_PCF+0x2a>
+	_delay_us(50);
+	E_0_PCF;
+ 1f4:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__data_end>
+ 1f8:	87 7f       	andi	r24, 0xF7	; 247
+ 1fa:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+ 1fe:	4c df       	rcall	.-360    	; 0x98 <TWI_write_byte_addr_PCF>
+ 200:	80 e1       	ldi	r24, 0x10	; 16
+ 202:	8a 95       	dec	r24
+ 204:	f1 f7       	brne	.-4      	; 0x202 <__EEPROM_REGION_LENGTH__+0x2>
+ 206:	00 c0       	rjmp	.+0      	; 0x208 <__EEPROM_REGION_LENGTH__+0x8>
+	_delay_us(50);
+
+	pcf_port = (data<<4);
+ 208:	8c 2f       	mov	r24, r28
+ 20a:	82 95       	swap	r24
+ 20c:	80 7f       	andi	r24, 0xF0	; 240
+ 20e:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+	TWI_write_byte_addr_PCF(pcf_port);
+ 212:	42 df       	rcall	.-380    	; 0x98 <TWI_write_byte_addr_PCF>
+	
+	RS_DATA_PCF;
+ 214:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__data_end>
+ 218:	84 60       	ori	r24, 0x04	; 4
+ 21a:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+ 21e:	3c df       	rcall	.-392    	; 0x98 <TWI_write_byte_addr_PCF>
+	E_1_PCF;
+ 220:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__data_end>
+ 224:	88 60       	ori	r24, 0x08	; 8
+ 226:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+ 22a:	36 df       	rcall	.-404    	; 0x98 <TWI_write_byte_addr_PCF>
+ 22c:	80 e1       	ldi	r24, 0x10	; 16
+ 22e:	8a 95       	dec	r24
+ 230:	f1 f7       	brne	.-4      	; 0x22e <__EEPROM_REGION_LENGTH__+0x2e>
+ 232:	00 c0       	rjmp	.+0      	; 0x234 <__EEPROM_REGION_LENGTH__+0x34>
+	_delay_us(50);
+	E_0_PCF;
+ 234:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__data_end>
+ 238:	87 7f       	andi	r24, 0xF7	; 247
+ 23a:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+ 23e:	2c df       	rcall	.-424    	; 0x98 <TWI_write_byte_addr_PCF>
+ 240:	80 e1       	ldi	r24, 0x10	; 16
+ 242:	8a 95       	dec	r24
+ 244:	f1 f7       	brne	.-4      	; 0x242 <__EEPROM_REGION_LENGTH__+0x42>
+ 246:	00 c0       	rjmp	.+0      	; 0x248 <__EEPROM_REGION_LENGTH__+0x48>
+	_delay_us(50);
+}
+ 248:	cf 91       	pop	r28
+ 24a:	08 95       	ret
+
+0000024c <LCD_setting>:
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 24c:	85 ea       	ldi	r24, 0xA5	; 165
+ 24e:	9e e0       	ldi	r25, 0x0E	; 14
+ 250:	01 97       	sbiw	r24, 0x01	; 1
+ 252:	f1 f7       	brne	.-4      	; 0x250 <LCD_setting+0x4>
+ 254:	00 c0       	rjmp	.+0      	; 0x256 <LCD_setting+0xa>
+ 256:	00 00       	nop
+// Для порта D
+void LCD_setting() {
+	
+	//from datasheet LCD
+	_delay_ms(15);
+	LCD_commands(0b00110000);
+ 258:	80 e3       	ldi	r24, 0x30	; 48
+ 25a:	28 df       	rcall	.-432    	; 0xac <LCD_commands>
+ 25c:	81 ee       	ldi	r24, 0xE1	; 225
+ 25e:	94 e0       	ldi	r25, 0x04	; 4
+ 260:	01 97       	sbiw	r24, 0x01	; 1
+ 262:	f1 f7       	brne	.-4      	; 0x260 <LCD_setting+0x14>
+ 264:	00 c0       	rjmp	.+0      	; 0x266 <LCD_setting+0x1a>
+ 266:	00 00       	nop
+	
+	_delay_ms(5);
+	LCD_commands(0b00110000);
+ 268:	80 e3       	ldi	r24, 0x30	; 48
+ 26a:	20 df       	rcall	.-448    	; 0xac <LCD_commands>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 26c:	91 e2       	ldi	r25, 0x21	; 33
+ 26e:	9a 95       	dec	r25
+ 270:	f1 f7       	brne	.-4      	; 0x26e <LCD_setting+0x22>
+ 272:	00 00       	nop
+
+	_delay_us(100);
+	LCD_commands(0b00110000);
+ 274:	80 e3       	ldi	r24, 0x30	; 48
+ 276:	1a df       	rcall	.-460    	; 0xac <LCD_commands>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 278:	89 ef       	ldi	r24, 0xF9	; 249
+ 27a:	90 e0       	ldi	r25, 0x00	; 0
+ 27c:	01 97       	sbiw	r24, 0x01	; 1
+ 27e:	f1 f7       	brne	.-4      	; 0x27c <LCD_setting+0x30>
+ 280:	00 c0       	rjmp	.+0      	; 0x282 <LCD_setting+0x36>
+ 282:	00 00       	nop
+	
+	_delay_ms(1);
+	LCD_commands(0b00000010);
+ 284:	82 e0       	ldi	r24, 0x02	; 2
+ 286:	12 df       	rcall	.-476    	; 0xac <LCD_commands>
+ 288:	83 ef       	ldi	r24, 0xF3	; 243
+ 28a:	91 e0       	ldi	r25, 0x01	; 1
+ 28c:	01 97       	sbiw	r24, 0x01	; 1
+ 28e:	f1 f7       	brne	.-4      	; 0x28c <LCD_setting+0x40>
+ 290:	00 c0       	rjmp	.+0      	; 0x292 <LCD_setting+0x46>
+ 292:	00 00       	nop
+	
+	_delay_ms(2);
+	LCD_commands(0b00101000); // 4 bits, 2 string, font 5*8
+ 294:	88 e2       	ldi	r24, 0x28	; 40
+ 296:	0a df       	rcall	.-492    	; 0xac <LCD_commands>
+ 298:	89 ef       	ldi	r24, 0xF9	; 249
+ 29a:	90 e0       	ldi	r25, 0x00	; 0
+ 29c:	01 97       	sbiw	r24, 0x01	; 1
+ 29e:	f1 f7       	brne	.-4      	; 0x29c <LCD_setting+0x50>
+ 2a0:	00 c0       	rjmp	.+0      	; 0x2a2 <LCD_setting+0x56>
+ 2a2:	00 00       	nop
+
+	_delay_ms(1);
+	LCD_commands(0b00001100); // turn on the display, do not show and do not blink the cursor
+ 2a4:	8c e0       	ldi	r24, 0x0C	; 12
+ 2a6:	02 df       	rcall	.-508    	; 0xac <LCD_commands>
+ 2a8:	89 ef       	ldi	r24, 0xF9	; 249
+ 2aa:	90 e0       	ldi	r25, 0x00	; 0
+ 2ac:	01 97       	sbiw	r24, 0x01	; 1
+ 2ae:	f1 f7       	brne	.-4      	; 0x2ac <LCD_setting+0x60>
+ 2b0:	00 c0       	rjmp	.+0      	; 0x2b2 <LCD_setting+0x66>
+ 2b2:	00 00       	nop
+	//LCD_commands(0b00001111); // turn on the display, show and blink the cursor
+
+	_delay_ms(1);
+	LCD_commands(0b00000001); // Clear display
+ 2b4:	81 e0       	ldi	r24, 0x01	; 1
+ 2b6:	fa de       	rcall	.-524    	; 0xac <LCD_commands>
+ 2b8:	83 ef       	ldi	r24, 0xF3	; 243
+ 2ba:	91 e0       	ldi	r25, 0x01	; 1
+ 2bc:	01 97       	sbiw	r24, 0x01	; 1
+ 2be:	f1 f7       	brne	.-4      	; 0x2bc <LCD_setting+0x70>
+ 2c0:	00 c0       	rjmp	.+0      	; 0x2c2 <LCD_setting+0x76>
+ 2c2:	00 00       	nop
+	
+	_delay_ms(2);
+	LCD_commands(0b00000110); // increment and shift the cursor to the right
+ 2c4:	86 e0       	ldi	r24, 0x06	; 6
+ 2c6:	f2 de       	rcall	.-540    	; 0xac <LCD_commands>
+ 2c8:	89 ef       	ldi	r24, 0xF9	; 249
+ 2ca:	90 e0       	ldi	r25, 0x00	; 0
+ 2cc:	01 97       	sbiw	r24, 0x01	; 1
+ 2ce:	f1 f7       	brne	.-4      	; 0x2cc <LCD_setting+0x80>
+ 2d0:	00 c0       	rjmp	.+0      	; 0x2d2 <LCD_setting+0x86>
+ 2d2:	00 00       	nop
+ 2d4:	08 95       	ret
+
+000002d6 <LCD_setting_PCF>:
+ 2d6:	85 ea       	ldi	r24, 0xA5	; 165
+ 2d8:	9e e0       	ldi	r25, 0x0E	; 14
+ 2da:	01 97       	sbiw	r24, 0x01	; 1
+ 2dc:	f1 f7       	brne	.-4      	; 0x2da <LCD_setting_PCF+0x4>
+ 2de:	00 c0       	rjmp	.+0      	; 0x2e0 <LCD_setting_PCF+0xa>
+ 2e0:	00 00       	nop
+
+// Для PCF8574
+void LCD_setting_PCF() {
+	//from datasheet LCD
+	_delay_ms(15);
+	LCD_commands_PCF(0b00110000);
+ 2e2:	80 e3       	ldi	r24, 0x30	; 48
+ 2e4:	0a df       	rcall	.-492    	; 0xfa <LCD_commands_PCF>
+ 2e6:	81 ee       	ldi	r24, 0xE1	; 225
+ 2e8:	94 e0       	ldi	r25, 0x04	; 4
+ 2ea:	01 97       	sbiw	r24, 0x01	; 1
+ 2ec:	f1 f7       	brne	.-4      	; 0x2ea <LCD_setting_PCF+0x14>
+ 2ee:	00 c0       	rjmp	.+0      	; 0x2f0 <LCD_setting_PCF+0x1a>
+ 2f0:	00 00       	nop
+	
+	_delay_ms(5);
+	LCD_commands_PCF(0b00110000);
+ 2f2:	80 e3       	ldi	r24, 0x30	; 48
+ 2f4:	02 df       	rcall	.-508    	; 0xfa <LCD_commands_PCF>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 2f6:	91 e2       	ldi	r25, 0x21	; 33
+ 2f8:	9a 95       	dec	r25
+ 2fa:	f1 f7       	brne	.-4      	; 0x2f8 <LCD_setting_PCF+0x22>
+ 2fc:	00 00       	nop
+
+	_delay_us(100);
+	LCD_commands_PCF(0b00110000);
+ 2fe:	80 e3       	ldi	r24, 0x30	; 48
+ 300:	fc de       	rcall	.-520    	; 0xfa <LCD_commands_PCF>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 302:	89 ef       	ldi	r24, 0xF9	; 249
+ 304:	90 e0       	ldi	r25, 0x00	; 0
+ 306:	01 97       	sbiw	r24, 0x01	; 1
+ 308:	f1 f7       	brne	.-4      	; 0x306 <LCD_setting_PCF+0x30>
+ 30a:	00 c0       	rjmp	.+0      	; 0x30c <LCD_setting_PCF+0x36>
+ 30c:	00 00       	nop
+	
+	_delay_ms(1);
+	LCD_commands_PCF(0b00000010);
+ 30e:	82 e0       	ldi	r24, 0x02	; 2
+ 310:	f4 de       	rcall	.-536    	; 0xfa <LCD_commands_PCF>
+ 312:	83 ef       	ldi	r24, 0xF3	; 243
+ 314:	91 e0       	ldi	r25, 0x01	; 1
+ 316:	01 97       	sbiw	r24, 0x01	; 1
+ 318:	f1 f7       	brne	.-4      	; 0x316 <LCD_setting_PCF+0x40>
+ 31a:	00 c0       	rjmp	.+0      	; 0x31c <LCD_setting_PCF+0x46>
+ 31c:	00 00       	nop
+	
+	_delay_ms(2);
+	LCD_commands_PCF(0b00101000); // 4 bits, 2 string, font 5*8
+ 31e:	88 e2       	ldi	r24, 0x28	; 40
+ 320:	ec de       	rcall	.-552    	; 0xfa <LCD_commands_PCF>
+ 322:	89 ef       	ldi	r24, 0xF9	; 249
+ 324:	90 e0       	ldi	r25, 0x00	; 0
+ 326:	01 97       	sbiw	r24, 0x01	; 1
+ 328:	f1 f7       	brne	.-4      	; 0x326 <LCD_setting_PCF+0x50>
+ 32a:	00 c0       	rjmp	.+0      	; 0x32c <LCD_setting_PCF+0x56>
+ 32c:	00 00       	nop
+
+	_delay_ms(1);
+	//LCD_commands_PCF(0b00001100); // turn on the display, do not show and do not blink the cursor
+	LCD_commands_PCF(0b00001111); // turn on the display, show and blink the cursor
+ 32e:	8f e0       	ldi	r24, 0x0F	; 15
+ 330:	e4 de       	rcall	.-568    	; 0xfa <LCD_commands_PCF>
+ 332:	89 ef       	ldi	r24, 0xF9	; 249
+ 334:	90 e0       	ldi	r25, 0x00	; 0
+ 336:	01 97       	sbiw	r24, 0x01	; 1
+ 338:	f1 f7       	brne	.-4      	; 0x336 <LCD_setting_PCF+0x60>
+ 33a:	00 c0       	rjmp	.+0      	; 0x33c <LCD_setting_PCF+0x66>
+ 33c:	00 00       	nop
+
+	_delay_ms(1);
+	LCD_commands_PCF(0b00000001); // Clear display
+ 33e:	81 e0       	ldi	r24, 0x01	; 1
+ 340:	dc de       	rcall	.-584    	; 0xfa <LCD_commands_PCF>
+ 342:	83 ef       	ldi	r24, 0xF3	; 243
+ 344:	91 e0       	ldi	r25, 0x01	; 1
+ 346:	01 97       	sbiw	r24, 0x01	; 1
+ 348:	f1 f7       	brne	.-4      	; 0x346 <LCD_setting_PCF+0x70>
+ 34a:	00 c0       	rjmp	.+0      	; 0x34c <LCD_setting_PCF+0x76>
+ 34c:	00 00       	nop
+	
+	_delay_ms(2);
+	LCD_commands_PCF(0b00000110); // increment and shift the cursor to the right
+ 34e:	86 e0       	ldi	r24, 0x06	; 6
+ 350:	d4 de       	rcall	.-600    	; 0xfa <LCD_commands_PCF>
+ 352:	89 ef       	ldi	r24, 0xF9	; 249
+ 354:	90 e0       	ldi	r25, 0x00	; 0
+ 356:	01 97       	sbiw	r24, 0x01	; 1
+ 358:	f1 f7       	brne	.-4      	; 0x356 <LCD_setting_PCF+0x80>
+ 35a:	00 c0       	rjmp	.+0      	; 0x35c <LCD_setting_PCF+0x86>
+ 35c:	00 00       	nop
+ 35e:	08 95       	ret
+
+00000360 <line1>:
+	_delay_ms(1);
+}
+
+
+void line1(unsigned char adress) {
+	LCD_commands(adress | (1<<7));
+ 360:	80 68       	ori	r24, 0x80	; 128
+ 362:	a4 de       	rcall	.-696    	; 0xac <LCD_commands>
+ 364:	08 95       	ret
+
+00000366 <line1_PCF>:
+}
+//// Для PCF8574
+void line1_PCF(unsigned char adress) {
+	LCD_commands_PCF(adress | (1<<7));
+ 366:	80 68       	ori	r24, 0x80	; 128
+ 368:	c8 de       	rcall	.-624    	; 0xfa <LCD_commands_PCF>
+ 36a:	08 95       	ret
+
+0000036c <line2>:
+}
+
+
+void line2(unsigned char adress) {
+	LCD_commands((adress + 0x40) | (1<<7));
+ 36c:	80 5c       	subi	r24, 0xC0	; 192
+ 36e:	80 68       	ori	r24, 0x80	; 128
+ 370:	9d de       	rcall	.-710    	; 0xac <LCD_commands>
+ 372:	08 95       	ret
+
+00000374 <line2_PCF>:
+}
+// Для PCF8574
+void line2_PCF(unsigned char adress) {
+	LCD_commands_PCF((adress + 0x40) | (1<<7));
+ 374:	80 5c       	subi	r24, 0xC0	; 192
+ 376:	80 68       	ori	r24, 0x80	; 128
+ 378:	c0 de       	rcall	.-640    	; 0xfa <LCD_commands_PCF>
+ 37a:	08 95       	ret
+
+0000037c <LCD_string>:
+}
+
+
+void LCD_string(char str[]) {
+ 37c:	1f 93       	push	r17
+ 37e:	cf 93       	push	r28
+ 380:	df 93       	push	r29
+ 382:	ec 01       	movw	r28, r24
+	for (uint8_t i = 0; i < strlen(str); i++) {
+ 384:	10 e0       	ldi	r17, 0x00	; 0
+ 386:	06 c0       	rjmp	.+12     	; 0x394 <LCD_string+0x18>
+		LCD_data(str[i]);
+ 388:	fe 01       	movw	r30, r28
+ 38a:	e8 0f       	add	r30, r24
+ 38c:	f9 1f       	adc	r31, r25
+ 38e:	80 81       	ld	r24, Z
+ 390:	f5 de       	rcall	.-534    	; 0x17c <LCD_data>
+	LCD_commands_PCF((adress + 0x40) | (1<<7));
+}
+
+
+void LCD_string(char str[]) {
+	for (uint8_t i = 0; i < strlen(str); i++) {
+ 392:	1f 5f       	subi	r17, 0xFF	; 255
+ 394:	81 2f       	mov	r24, r17
+ 396:	90 e0       	ldi	r25, 0x00	; 0
+ 398:	fe 01       	movw	r30, r28
+ 39a:	01 90       	ld	r0, Z+
+ 39c:	00 20       	and	r0, r0
+ 39e:	e9 f7       	brne	.-6      	; 0x39a <LCD_string+0x1e>
+ 3a0:	31 97       	sbiw	r30, 0x01	; 1
+ 3a2:	ec 1b       	sub	r30, r28
+ 3a4:	fd 0b       	sbc	r31, r29
+ 3a6:	8e 17       	cp	r24, r30
+ 3a8:	9f 07       	cpc	r25, r31
+ 3aa:	70 f3       	brcs	.-36     	; 0x388 <LCD_string+0xc>
+		LCD_data(str[i]);
+	}
+}
+ 3ac:	df 91       	pop	r29
+ 3ae:	cf 91       	pop	r28
+ 3b0:	1f 91       	pop	r17
+ 3b2:	08 95       	ret
+
+000003b4 <LCD_string_PCF>:
+// Для PCF8574
+void LCD_string_PCF(char str[]) {
+ 3b4:	1f 93       	push	r17
+ 3b6:	cf 93       	push	r28
+ 3b8:	df 93       	push	r29
+ 3ba:	ec 01       	movw	r28, r24
+	for (uint8_t i = 0; i < strlen(str); i++) {
+ 3bc:	10 e0       	ldi	r17, 0x00	; 0
+ 3be:	06 c0       	rjmp	.+12     	; 0x3cc <LCD_string_PCF+0x18>
+		LCD_data_PCF(str[i]);
+ 3c0:	fe 01       	movw	r30, r28
+ 3c2:	e8 0f       	add	r30, r24
+ 3c4:	f9 1f       	adc	r31, r25
+ 3c6:	80 81       	ld	r24, Z
+ 3c8:	00 df       	rcall	.-512    	; 0x1ca <LCD_data_PCF>
+		LCD_data(str[i]);
+	}
+}
+// Для PCF8574
+void LCD_string_PCF(char str[]) {
+	for (uint8_t i = 0; i < strlen(str); i++) {
+ 3ca:	1f 5f       	subi	r17, 0xFF	; 255
+ 3cc:	81 2f       	mov	r24, r17
+ 3ce:	90 e0       	ldi	r25, 0x00	; 0
+ 3d0:	fe 01       	movw	r30, r28
+ 3d2:	01 90       	ld	r0, Z+
+ 3d4:	00 20       	and	r0, r0
+ 3d6:	e9 f7       	brne	.-6      	; 0x3d2 <LCD_string_PCF+0x1e>
+ 3d8:	31 97       	sbiw	r30, 0x01	; 1
+ 3da:	ec 1b       	sub	r30, r28
+ 3dc:	fd 0b       	sbc	r31, r29
+ 3de:	8e 17       	cp	r24, r30
+ 3e0:	9f 07       	cpc	r25, r31
+ 3e2:	70 f3       	brcs	.-36     	; 0x3c0 <LCD_string_PCF+0xc>
+		LCD_data_PCF(str[i]);
+	}
+}
+ 3e4:	df 91       	pop	r29
+ 3e6:	cf 91       	pop	r28
+ 3e8:	1f 91       	pop	r17
+ 3ea:	08 95       	ret
+
+000003ec <main>:
+
+
+
+int main(void)
+{
+	 DDRB = 0xff;
+ 3ec:	8f ef       	ldi	r24, 0xFF	; 255
+ 3ee:	87 bb       	out	0x17, r24	; 23
+	 
+	TWI_settings ();
+ 3f0:	36 de       	rcall	.-916    	; 0x5e <TWI_settings>
+	
+	// Запись данных
+	TWI_start();
+ 3f2:	3b de       	rcall	.-906    	; 0x6a <TWI_start>
+	TWI_write_byte(0b01000000); // Адрес000 + W
+ 3f4:	80 e4       	ldi	r24, 0x40	; 64
+ 3f6:	42 de       	rcall	.-892    	; 0x7c <TWI_write_byte>
+	TWI_write_byte(0b10011011); // Данные
+ 3f8:	8b e9       	ldi	r24, 0x9B	; 155
+ 3fa:	40 de       	rcall	.-896    	; 0x7c <TWI_write_byte>
+	TWI_stop();
+ 3fc:	3c de       	rcall	.-904    	; 0x76 <TWI_stop>
+	
+	// Чтение данных
+	TWI_start();
+ 3fe:	35 de       	rcall	.-918    	; 0x6a <TWI_start>
+	TWI_write_byte(0b01000011); // Адрес001 + R
+ 400:	83 e4       	ldi	r24, 0x43	; 67
+ 402:	3c de       	rcall	.-904    	; 0x7c <TWI_write_byte>
+	PORTB = TWI_read_byte();
+ 404:	42 de       	rcall	.-892    	; 0x8a <TWI_read_byte>
+ 406:	88 bb       	out	0x18, r24	; 24
+	TWI_stop();
+ 408:	36 de       	rcall	.-916    	; 0x76 <TWI_stop>
+	
+	// for button and led in while
+	TWI_start();
+ 40a:	2f de       	rcall	.-930    	; 0x6a <TWI_start>
+	TWI_write_byte(0b01000011);
+ 40c:	83 e4       	ldi	r24, 0x43	; 67
+ 40e:	36 de       	rcall	.-916    	; 0x7c <TWI_write_byte>
+	
+	//LCD PIND
+	DDRD = 0b11111100;
+ 410:	8c ef       	ldi	r24, 0xFC	; 252
+ 412:	81 bb       	out	0x11, r24	; 17
+	PORTD = 0b00000000;
+ 414:	12 ba       	out	0x12, r1	; 18
+	LCD_setting();
+ 416:	1a df       	rcall	.-460    	; 0x24c <LCD_setting>
+	line1(6);
+ 418:	86 e0       	ldi	r24, 0x06	; 6
+ 41a:	a2 df       	rcall	.-188    	; 0x360 <line1>
+	LCD_string("!!!!!");
+ 41c:	80 e6       	ldi	r24, 0x60	; 96
+ 41e:	90 e0       	ldi	r25, 0x00	; 0
+ 420:	ad df       	rcall	.-166    	; 0x37c <LCD_string>
+	line2(2);
+ 422:	82 e0       	ldi	r24, 0x02	; 2
+ 424:	a3 df       	rcall	.-186    	; 0x36c <line2>
+	LCD_string("Print string");
+ 426:	86 e6       	ldi	r24, 0x66	; 102
+ 428:	90 e0       	ldi	r25, 0x00	; 0
+ 42a:	a8 df       	rcall	.-176    	; 0x37c <LCD_string>
+	
+	///LCD PCF8574
+	LCD_setting_PCF();
+ 42c:	54 df       	rcall	.-344    	; 0x2d6 <LCD_setting_PCF>
+	line1_PCF(6);
+ 42e:	86 e0       	ldi	r24, 0x06	; 6
+ 430:	9a df       	rcall	.-204    	; 0x366 <line1_PCF>
+	LCD_string_PCF("!!!!!");
+ 432:	80 e6       	ldi	r24, 0x60	; 96
+ 434:	90 e0       	ldi	r25, 0x00	; 0
+ 436:	be df       	rcall	.-132    	; 0x3b4 <LCD_string_PCF>
+	line2_PCF(2);
+ 438:	82 e0       	ldi	r24, 0x02	; 2
+ 43a:	9c df       	rcall	.-200    	; 0x374 <line2_PCF>
+	LCD_string_PCF("Print string");
+ 43c:	86 e6       	ldi	r24, 0x66	; 102
+ 43e:	90 e0       	ldi	r25, 0x00	; 0
+ 440:	b9 df       	rcall	.-142    	; 0x3b4 <LCD_string_PCF>
+ 442:	87 ea       	ldi	r24, 0xA7	; 167
+ 444:	91 e6       	ldi	r25, 0x61	; 97
+ 446:	01 97       	sbiw	r24, 0x01	; 1
+ 448:	f1 f7       	brne	.-4      	; 0x446 <__DATA_REGION_LENGTH__+0x46>
+ 44a:	00 c0       	rjmp	.+0      	; 0x44c <__DATA_REGION_LENGTH__+0x4c>
+ 44c:	00 00       	nop
+    while (1) 
+    {
+		// for button and led in while
+		// Чтение данных
+		_delay_ms(100); //чтобы не загружать процессор микроконтроллера
+		PORTB = TWI_read_byte();
+ 44e:	1d de       	rcall	.-966    	; 0x8a <TWI_read_byte>
+ 450:	88 bb       	out	0x18, r24	; 24
+ 452:	f7 cf       	rjmp	.-18     	; 0x442 <__DATA_REGION_LENGTH__+0x42>
+
+00000454 <_exit>:
+ 454:	f8 94       	cli
+
+00000456 <__stop_program>:
+ 456:	ff cf       	rjmp	.-2      	; 0x456 <__stop_program>

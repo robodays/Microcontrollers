@@ -1,0 +1,577 @@
+
+25_TWI_I2C_and_EEPROM_24C256.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000002aa  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000016  00800060  000002aa  0000033e  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          0000000a  00800076  00800076  00000354  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000354  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000384  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000048  00000000  00000000  000003c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000006f8  00000000  00000000  00000408  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000005a6  00000000  00000000  00000b00  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000450  00000000  00000000  000010a6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  0000009c  00000000  00000000  000014f8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000376  00000000  00000000  00001594  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000000f3  00000000  00000000  0000190a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000038  00000000  00000000  000019fd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	2c c0       	rjmp	.+88     	; 0x5c <__bad_interrupt>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	25 c0       	rjmp	.+74     	; 0x5c <__bad_interrupt>
+  12:	46 c0       	rjmp	.+140    	; 0xa0 <__vector_9>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	ea ea       	ldi	r30, 0xAA	; 170
+  3a:	f2 e0       	ldi	r31, 0x02	; 2
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <__SREG__+0x3>
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+  42:	a6 37       	cpi	r26, 0x76	; 118
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <__SP_H__>
+
+00000048 <__do_clear_bss>:
+  48:	20 e0       	ldi	r18, 0x00	; 0
+  4a:	a6 e7       	ldi	r26, 0x76	; 118
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	a0 38       	cpi	r26, 0x80	; 128
+  54:	b2 07       	cpc	r27, r18
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	99 d0       	rcall	.+306    	; 0x18c <main>
+  5a:	25 c1       	rjmp	.+586    	; 0x2a6 <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <number>:
+unsigned char TWI_status = 0;
+unsigned char TWI_data = 0;
+
+//bool negative_temperature = false;
+
+void number(int num) {
+  5e:	cf 93       	push	r28
+  60:	df 93       	push	r29
+  62:	9c 01       	movw	r18, r24
+	digits[0] = num/1000;
+  64:	68 ee       	ldi	r22, 0xE8	; 232
+  66:	73 e0       	ldi	r23, 0x03	; 3
+  68:	f7 d0       	rcall	.+494    	; 0x258 <__divmodhi4>
+  6a:	e8 e7       	ldi	r30, 0x78	; 120
+  6c:	f0 e0       	ldi	r31, 0x00	; 0
+  6e:	71 83       	std	Z+1, r23	; 0x01
+  70:	60 83       	st	Z, r22
+	digits[1] = num % 1000 / 100;
+  72:	c4 e6       	ldi	r28, 0x64	; 100
+  74:	d0 e0       	ldi	r29, 0x00	; 0
+  76:	be 01       	movw	r22, r28
+  78:	ef d0       	rcall	.+478    	; 0x258 <__divmodhi4>
+  7a:	73 83       	std	Z+3, r23	; 0x03
+  7c:	62 83       	std	Z+2, r22	; 0x02
+	digits[2] = num % 100 / 10;
+  7e:	c9 01       	movw	r24, r18
+  80:	be 01       	movw	r22, r28
+  82:	ea d0       	rcall	.+468    	; 0x258 <__divmodhi4>
+  84:	ca e0       	ldi	r28, 0x0A	; 10
+  86:	d0 e0       	ldi	r29, 0x00	; 0
+  88:	be 01       	movw	r22, r28
+  8a:	e6 d0       	rcall	.+460    	; 0x258 <__divmodhi4>
+  8c:	75 83       	std	Z+5, r23	; 0x05
+  8e:	64 83       	std	Z+4, r22	; 0x04
+	digits[3] = num % 10;
+  90:	c9 01       	movw	r24, r18
+  92:	be 01       	movw	r22, r28
+  94:	e1 d0       	rcall	.+450    	; 0x258 <__divmodhi4>
+  96:	97 83       	std	Z+7, r25	; 0x07
+  98:	86 83       	std	Z+6, r24	; 0x06
+}
+  9a:	df 91       	pop	r29
+  9c:	cf 91       	pop	r28
+  9e:	08 95       	ret
+
+000000a0 <__vector_9>:
+
+ISR (TIMER0_OVF_vect) {
+  a0:	1f 92       	push	r1
+  a2:	0f 92       	push	r0
+  a4:	0f b6       	in	r0, 0x3f	; 63
+  a6:	0f 92       	push	r0
+  a8:	11 24       	eor	r1, r1
+  aa:	8f 93       	push	r24
+  ac:	ef 93       	push	r30
+  ae:	ff 93       	push	r31
+	if (discharge == 1) {
+  b0:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+  b4:	81 30       	cpi	r24, 0x01	; 1
+  b6:	81 f4       	brne	.+32     	; 0xd8 <__vector_9+0x38>
+		PORTC &= ~(1<<0);
+  b8:	85 b3       	in	r24, 0x15	; 21
+  ba:	8e 7f       	andi	r24, 0xFE	; 254
+  bc:	85 bb       	out	0x15, r24	; 21
+		PORTC |= (1<<3);
+  be:	85 b3       	in	r24, 0x15	; 21
+  c0:	88 60       	ori	r24, 0x08	; 8
+  c2:	85 bb       	out	0x15, r24	; 21
+		PORTD = digits16[digits[0]];
+  c4:	e0 91 78 00 	lds	r30, 0x0078	; 0x800078 <digits>
+  c8:	f0 91 79 00 	lds	r31, 0x0079	; 0x800079 <digits+0x1>
+  cc:	ee 0f       	add	r30, r30
+  ce:	ff 1f       	adc	r31, r31
+  d0:	ef 59       	subi	r30, 0x9F	; 159
+  d2:	ff 4f       	sbci	r31, 0xFF	; 255
+  d4:	80 81       	ld	r24, Z
+  d6:	82 bb       	out	0x12, r24	; 18
+			//PORTD &= ~(1<<6);
+			PORTD = digits16[digits[0]];
+		}
+		*/
+	}
+	if (discharge == 2) {
+  d8:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+  dc:	82 30       	cpi	r24, 0x02	; 2
+  de:	81 f4       	brne	.+32     	; 0x100 <__vector_9+0x60>
+		PORTC &= ~(1<<1);
+  e0:	85 b3       	in	r24, 0x15	; 21
+  e2:	8d 7f       	andi	r24, 0xFD	; 253
+  e4:	85 bb       	out	0x15, r24	; 21
+		PORTC |= (1<<0);
+  e6:	85 b3       	in	r24, 0x15	; 21
+  e8:	81 60       	ori	r24, 0x01	; 1
+  ea:	85 bb       	out	0x15, r24	; 21
+		PORTD = digits16[digits[1]];
+  ec:	e0 91 7a 00 	lds	r30, 0x007A	; 0x80007a <digits+0x2>
+  f0:	f0 91 7b 00 	lds	r31, 0x007B	; 0x80007b <digits+0x3>
+  f4:	ee 0f       	add	r30, r30
+  f6:	ff 1f       	adc	r31, r31
+  f8:	ef 59       	subi	r30, 0x9F	; 159
+  fa:	ff 4f       	sbci	r31, 0xFF	; 255
+  fc:	80 81       	ld	r24, Z
+  fe:	82 bb       	out	0x12, r24	; 18
+	}
+	if (discharge == 3) {
+ 100:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 104:	83 30       	cpi	r24, 0x03	; 3
+ 106:	81 f4       	brne	.+32     	; 0x128 <__vector_9+0x88>
+		PORTC &= ~(1<<2);
+ 108:	85 b3       	in	r24, 0x15	; 21
+ 10a:	8b 7f       	andi	r24, 0xFB	; 251
+ 10c:	85 bb       	out	0x15, r24	; 21
+		PORTC |= (1<<1);
+ 10e:	85 b3       	in	r24, 0x15	; 21
+ 110:	82 60       	ori	r24, 0x02	; 2
+ 112:	85 bb       	out	0x15, r24	; 21
+		PORTD = digits16[digits[2]];
+ 114:	e0 91 7c 00 	lds	r30, 0x007C	; 0x80007c <digits+0x4>
+ 118:	f0 91 7d 00 	lds	r31, 0x007D	; 0x80007d <digits+0x5>
+ 11c:	ee 0f       	add	r30, r30
+ 11e:	ff 1f       	adc	r31, r31
+ 120:	ef 59       	subi	r30, 0x9F	; 159
+ 122:	ff 4f       	sbci	r31, 0xFF	; 255
+ 124:	80 81       	ld	r24, Z
+ 126:	82 bb       	out	0x12, r24	; 18
+		//PORTD |= (1<<7);
+	}
+	if (discharge == 4) {
+ 128:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 12c:	84 30       	cpi	r24, 0x04	; 4
+ 12e:	91 f4       	brne	.+36     	; 0x154 <__vector_9+0xb4>
+		PORTC &= ~(1<<3);
+ 130:	85 b3       	in	r24, 0x15	; 21
+ 132:	87 7f       	andi	r24, 0xF7	; 247
+ 134:	85 bb       	out	0x15, r24	; 21
+		PORTC |= (1<<2);
+ 136:	85 b3       	in	r24, 0x15	; 21
+ 138:	84 60       	ori	r24, 0x04	; 4
+ 13a:	85 bb       	out	0x15, r24	; 21
+		PORTD = digits16[digits[3]];
+ 13c:	e0 91 7e 00 	lds	r30, 0x007E	; 0x80007e <digits+0x6>
+ 140:	f0 91 7f 00 	lds	r31, 0x007F	; 0x80007f <digits+0x7>
+ 144:	ee 0f       	add	r30, r30
+ 146:	ff 1f       	adc	r31, r31
+ 148:	ef 59       	subi	r30, 0x9F	; 159
+ 14a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 14c:	80 81       	ld	r24, Z
+ 14e:	82 bb       	out	0x12, r24	; 18
+		discharge = 0;
+ 150:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <__DATA_REGION_ORIGIN__>
+	}
+	discharge++;
+ 154:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 158:	8f 5f       	subi	r24, 0xFF	; 255
+ 15a:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+}
+ 15e:	ff 91       	pop	r31
+ 160:	ef 91       	pop	r30
+ 162:	8f 91       	pop	r24
+ 164:	0f 90       	pop	r0
+ 166:	0f be       	out	0x3f, r0	; 63
+ 168:	0f 90       	pop	r0
+ 16a:	1f 90       	pop	r1
+ 16c:	18 95       	reti
+
+0000016e <TWI_settings>:
+
+// Настройки TWI
+void TWI_settings (void)
+{
+	TWBR = 2; // Частота 50 кГц линии тактирования при fмк = 1 МГц
+ 16e:	82 e0       	ldi	r24, 0x02	; 2
+ 170:	80 b9       	out	0x00, r24	; 0
+	TWSR &= ~((1<<TWPS1) | (1<<TWPS0)); // Коэф. деления = 1
+ 172:	81 b1       	in	r24, 0x01	; 1
+ 174:	8c 7f       	andi	r24, 0xFC	; 252
+ 176:	81 b9       	out	0x01, r24	; 1
+ 178:	08 95       	ret
+
+0000017a <TWI_start>:
+}
+
+// Старт TWI
+void TWI_start (void)
+{
+	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+ 17a:	84 ea       	ldi	r24, 0xA4	; 164
+ 17c:	86 bf       	out	0x36, r24	; 54
+	while (!(TWCR&(1<<TWINT)))
+ 17e:	06 b6       	in	r0, 0x36	; 54
+ 180:	07 fe       	sbrs	r0, 7
+ 182:	fd cf       	rjmp	.-6      	; 0x17e <TWI_start+0x4>
+	;
+}
+ 184:	08 95       	ret
+
+00000186 <TWI_stop>:
+
+// Стоп TWI
+void TWI_stop (void)
+{
+	TWCR = (1<<TWINT) | (1<<TWSTO) | (1<<TWEN);
+ 186:	84 e9       	ldi	r24, 0x94	; 148
+ 188:	86 bf       	out	0x36, r24	; 54
+ 18a:	08 95       	ret
+
+0000018c <main>:
+
+
+int main(void)
+{
+	//7seg
+	DDRC |= (1<<0) | (1<<1) | (1<<2) | (1<<3);
+ 18c:	84 b3       	in	r24, 0x14	; 20
+ 18e:	8f 60       	ori	r24, 0x0F	; 15
+ 190:	84 bb       	out	0x14, r24	; 20
+	DDRD = 0b11111111;
+ 192:	8f ef       	ldi	r24, 0xFF	; 255
+ 194:	81 bb       	out	0x11, r24	; 17
+	
+	PORTC |= (1<<0) | (1<<1) | (1<<2) | (1<<3);
+ 196:	85 b3       	in	r24, 0x15	; 21
+ 198:	8f 60       	ori	r24, 0x0F	; 15
+ 19a:	85 bb       	out	0x15, r24	; 21
+
+	PORTD = 0b00000000;	
+ 19c:	12 ba       	out	0x12, r1	; 18
+
+	// 1000000/8
+	//TCCR0 |= (1<<1);
+	//TCCR0 &= ~((1<<0) | (1<<2));
+	// 1000000/64
+	TCCR0 |= (1<<1) | (1<<0);
+ 19e:	83 b7       	in	r24, 0x33	; 51
+ 1a0:	83 60       	ori	r24, 0x03	; 3
+ 1a2:	83 bf       	out	0x33, r24	; 51
+	TCCR0 &= ~(1<<2);
+ 1a4:	83 b7       	in	r24, 0x33	; 51
+ 1a6:	8b 7f       	andi	r24, 0xFB	; 251
+ 1a8:	83 bf       	out	0x33, r24	; 51
+	
+	TIMSK |= (1<<0); //Timer/Counter0 Overflow Interrupt Enable
+ 1aa:	89 b7       	in	r24, 0x39	; 57
+ 1ac:	81 60       	ori	r24, 0x01	; 1
+ 1ae:	89 bf       	out	0x39, r24	; 57
+	TCNT0 = 0; // Timer/Counter Register
+ 1b0:	12 be       	out	0x32, r1	; 50
+	sei();
+ 1b2:	78 94       	sei
+	
+	TWI_settings();
+ 1b4:	dc df       	rcall	.-72     	; 0x16e <TWI_settings>
+	
+	
+	////////////////// Запись
+	TWI_start();
+ 1b6:	e1 df       	rcall	.-62     	; 0x17a <TWI_start>
+	
+//TWI_status = TWSR;
+	
+	TWDR = 0b10100000; //Адрес устройства + запись W
+ 1b8:	80 ea       	ldi	r24, 0xA0	; 160
+ 1ba:	83 b9       	out	0x03, r24	; 3
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 1bc:	84 e8       	ldi	r24, 0x84	; 132
+ 1be:	86 bf       	out	0x36, r24	; 54
+	while (!(TWCR&(1<<TWINT)))
+ 1c0:	06 b6       	in	r0, 0x36	; 54
+ 1c2:	07 fe       	sbrs	r0, 7
+ 1c4:	fd cf       	rjmp	.-6      	; 0x1c0 <main+0x34>
+	;
+	
+//TWI_status = TWSR;
+	
+	TWDR = 0; // Старший байт адреса внешней EEPROM 24C256
+ 1c6:	13 b8       	out	0x03, r1	; 3
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 1c8:	84 e8       	ldi	r24, 0x84	; 132
+ 1ca:	86 bf       	out	0x36, r24	; 54
+	while (!(TWCR&(1<<TWINT)))
+ 1cc:	06 b6       	in	r0, 0x36	; 54
+ 1ce:	07 fe       	sbrs	r0, 7
+ 1d0:	fd cf       	rjmp	.-6      	; 0x1cc <main+0x40>
+	;
+	
+	TWDR = 8; // Младший байт адреса внешней EEPROM 24C256
+ 1d2:	88 e0       	ldi	r24, 0x08	; 8
+ 1d4:	83 b9       	out	0x03, r24	; 3
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 1d6:	84 e8       	ldi	r24, 0x84	; 132
+ 1d8:	86 bf       	out	0x36, r24	; 54
+	while (!(TWCR&(1<<TWINT)))
+ 1da:	06 b6       	in	r0, 0x36	; 54
+ 1dc:	07 fe       	sbrs	r0, 7
+ 1de:	fd cf       	rjmp	.-6      	; 0x1da <main+0x4e>
+	;
+	
+//TWI_status = TWSR;
+	
+	TWDR = 156; // Запись данных во внешнюю EEPROM 24C256
+ 1e0:	8c e9       	ldi	r24, 0x9C	; 156
+ 1e2:	83 b9       	out	0x03, r24	; 3
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 1e4:	84 e8       	ldi	r24, 0x84	; 132
+ 1e6:	86 bf       	out	0x36, r24	; 54
+	while (!(TWCR&(1<<TWINT)))
+ 1e8:	06 b6       	in	r0, 0x36	; 54
+ 1ea:	07 fe       	sbrs	r0, 7
+ 1ec:	fd cf       	rjmp	.-6      	; 0x1e8 <main+0x5c>
+	;
+	
+//TWI_status = TWSR;
+	
+	TWI_stop();
+ 1ee:	cb df       	rcall	.-106    	; 0x186 <TWI_stop>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 1f0:	83 ec       	ldi	r24, 0xC3	; 195
+ 1f2:	99 e0       	ldi	r25, 0x09	; 9
+ 1f4:	01 97       	sbiw	r24, 0x01	; 1
+ 1f6:	f1 f7       	brne	.-4      	; 0x1f4 <main+0x68>
+ 1f8:	00 c0       	rjmp	.+0      	; 0x1fa <main+0x6e>
+ 1fa:	00 00       	nop
+	_delay_ms(10);	// задержка, т.к. не успевает обработать
+//TWI_status = TWSR;
+	
+	/////////////////////////// Чтение
+	
+	TWI_start();
+ 1fc:	be df       	rcall	.-132    	; 0x17a <TWI_start>
+		
+//TWI_status = TWSR;
+		
+	TWDR = 0b10100000; //Адрес устройства + запись W
+ 1fe:	80 ea       	ldi	r24, 0xA0	; 160
+ 200:	83 b9       	out	0x03, r24	; 3
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 202:	84 e8       	ldi	r24, 0x84	; 132
+ 204:	86 bf       	out	0x36, r24	; 54
+	while (!(TWCR&(1<<TWINT)))
+ 206:	06 b6       	in	r0, 0x36	; 54
+ 208:	07 fe       	sbrs	r0, 7
+ 20a:	fd cf       	rjmp	.-6      	; 0x206 <__EEPROM_REGION_LENGTH__+0x6>
+	;
+		
+//TWI_status = TWSR;
+		
+	TWDR = 0; // Старший байт адреса внешней EEPROM 24C256
+ 20c:	13 b8       	out	0x03, r1	; 3
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 20e:	84 e8       	ldi	r24, 0x84	; 132
+ 210:	86 bf       	out	0x36, r24	; 54
+	while (!(TWCR&(1<<TWINT)))
+ 212:	06 b6       	in	r0, 0x36	; 54
+ 214:	07 fe       	sbrs	r0, 7
+ 216:	fd cf       	rjmp	.-6      	; 0x212 <__EEPROM_REGION_LENGTH__+0x12>
+	;
+		
+	TWDR = 8; // Младший байт адреса внешней EEPROM 24C256
+ 218:	88 e0       	ldi	r24, 0x08	; 8
+ 21a:	83 b9       	out	0x03, r24	; 3
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 21c:	84 e8       	ldi	r24, 0x84	; 132
+ 21e:	86 bf       	out	0x36, r24	; 54
+	while (!(TWCR&(1<<TWINT)))
+ 220:	06 b6       	in	r0, 0x36	; 54
+ 222:	07 fe       	sbrs	r0, 7
+ 224:	fd cf       	rjmp	.-6      	; 0x220 <__EEPROM_REGION_LENGTH__+0x20>
+	;
+		
+//TWI_status = TWSR;
+	
+	TWI_start(); // повторный старт для чтения
+ 226:	a9 df       	rcall	.-174    	; 0x17a <TWI_start>
+	
+//TWI_status = TWSR;
+	
+	TWDR = 0b10100001; //Адрес устройства + чтение R
+ 228:	81 ea       	ldi	r24, 0xA1	; 161
+ 22a:	83 b9       	out	0x03, r24	; 3
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 22c:	84 e8       	ldi	r24, 0x84	; 132
+ 22e:	86 bf       	out	0x36, r24	; 54
+	while (!(TWCR&(1<<TWINT)))
+ 230:	06 b6       	in	r0, 0x36	; 54
+ 232:	07 fe       	sbrs	r0, 7
+ 234:	fd cf       	rjmp	.-6      	; 0x230 <__EEPROM_REGION_LENGTH__+0x30>
+	;
+//TWI_status = TWSR;
+
+	// Принимаем данные из EEPROM
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 236:	84 e8       	ldi	r24, 0x84	; 132
+ 238:	86 bf       	out	0x36, r24	; 54
+	while (!(TWCR&(1<<TWINT)))
+ 23a:	06 b6       	in	r0, 0x36	; 54
+ 23c:	07 fe       	sbrs	r0, 7
+ 23e:	fd cf       	rjmp	.-6      	; 0x23a <__EEPROM_REGION_LENGTH__+0x3a>
+	;
+	TWI_data = TWDR;
+ 240:	83 b1       	in	r24, 0x03	; 3
+ 242:	80 93 76 00 	sts	0x0076, r24	; 0x800076 <__data_end>
+	TWI_status = TWSR;
+ 246:	81 b1       	in	r24, 0x01	; 1
+ 248:	80 93 77 00 	sts	0x0077, r24	; 0x800077 <TWI_status>
+	
+	TWI_stop();
+ 24c:	9c df       	rcall	.-200    	; 0x186 <TWI_stop>
+	
+	while (1)
+	{
+		//number(1234);
+		//number(TWI_status);
+		number(TWI_data);
+ 24e:	80 91 76 00 	lds	r24, 0x0076	; 0x800076 <__data_end>
+ 252:	90 e0       	ldi	r25, 0x00	; 0
+ 254:	04 df       	rcall	.-504    	; 0x5e <number>
+ 256:	fb cf       	rjmp	.-10     	; 0x24e <__EEPROM_REGION_LENGTH__+0x4e>
+
+00000258 <__divmodhi4>:
+ 258:	97 fb       	bst	r25, 7
+ 25a:	07 2e       	mov	r0, r23
+ 25c:	16 f4       	brtc	.+4      	; 0x262 <__divmodhi4+0xa>
+ 25e:	00 94       	com	r0
+ 260:	06 d0       	rcall	.+12     	; 0x26e <__divmodhi4_neg1>
+ 262:	77 fd       	sbrc	r23, 7
+ 264:	08 d0       	rcall	.+16     	; 0x276 <__divmodhi4_neg2>
+ 266:	0b d0       	rcall	.+22     	; 0x27e <__udivmodhi4>
+ 268:	07 fc       	sbrc	r0, 7
+ 26a:	05 d0       	rcall	.+10     	; 0x276 <__divmodhi4_neg2>
+ 26c:	3e f4       	brtc	.+14     	; 0x27c <__divmodhi4_exit>
+
+0000026e <__divmodhi4_neg1>:
+ 26e:	90 95       	com	r25
+ 270:	81 95       	neg	r24
+ 272:	9f 4f       	sbci	r25, 0xFF	; 255
+ 274:	08 95       	ret
+
+00000276 <__divmodhi4_neg2>:
+ 276:	70 95       	com	r23
+ 278:	61 95       	neg	r22
+ 27a:	7f 4f       	sbci	r23, 0xFF	; 255
+
+0000027c <__divmodhi4_exit>:
+ 27c:	08 95       	ret
+
+0000027e <__udivmodhi4>:
+ 27e:	aa 1b       	sub	r26, r26
+ 280:	bb 1b       	sub	r27, r27
+ 282:	51 e1       	ldi	r21, 0x11	; 17
+ 284:	07 c0       	rjmp	.+14     	; 0x294 <__udivmodhi4_ep>
+
+00000286 <__udivmodhi4_loop>:
+ 286:	aa 1f       	adc	r26, r26
+ 288:	bb 1f       	adc	r27, r27
+ 28a:	a6 17       	cp	r26, r22
+ 28c:	b7 07       	cpc	r27, r23
+ 28e:	10 f0       	brcs	.+4      	; 0x294 <__udivmodhi4_ep>
+ 290:	a6 1b       	sub	r26, r22
+ 292:	b7 0b       	sbc	r27, r23
+
+00000294 <__udivmodhi4_ep>:
+ 294:	88 1f       	adc	r24, r24
+ 296:	99 1f       	adc	r25, r25
+ 298:	5a 95       	dec	r21
+ 29a:	a9 f7       	brne	.-22     	; 0x286 <__udivmodhi4_loop>
+ 29c:	80 95       	com	r24
+ 29e:	90 95       	com	r25
+ 2a0:	bc 01       	movw	r22, r24
+ 2a2:	cd 01       	movw	r24, r26
+ 2a4:	08 95       	ret
+
+000002a6 <_exit>:
+ 2a6:	f8 94       	cli
+
+000002a8 <__stop_program>:
+ 2a8:	ff cf       	rjmp	.-2      	; 0x2a8 <__stop_program>

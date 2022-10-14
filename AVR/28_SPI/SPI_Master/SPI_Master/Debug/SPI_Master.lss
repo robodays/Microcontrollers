@@ -1,0 +1,275 @@
+
+SPI_Master.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000152  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  000001c6  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000002  00800060  00800060  000001c6  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000001c6  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000001f8  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000030  00000000  00000000  00000234  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000061f  00000000  00000000  00000264  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000575  00000000  00000000  00000883  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   0000030a  00000000  00000000  00000df8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000054  00000000  00000000  00001104  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000318  00000000  00000000  00001158  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000084  00000000  00000000  00001470  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000020  00000000  00000000  000014f4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	21 c0       	rjmp	.+66     	; 0x46 <__bad_interrupt>
+   4:	20 c0       	rjmp	.+64     	; 0x46 <__bad_interrupt>
+   6:	1f c0       	rjmp	.+62     	; 0x46 <__bad_interrupt>
+   8:	1e c0       	rjmp	.+60     	; 0x46 <__bad_interrupt>
+   a:	1d c0       	rjmp	.+58     	; 0x46 <__bad_interrupt>
+   c:	1c c0       	rjmp	.+56     	; 0x46 <__bad_interrupt>
+   e:	1b c0       	rjmp	.+54     	; 0x46 <__bad_interrupt>
+  10:	1a c0       	rjmp	.+52     	; 0x46 <__bad_interrupt>
+  12:	19 c0       	rjmp	.+50     	; 0x46 <__bad_interrupt>
+  14:	3e c0       	rjmp	.+124    	; 0x92 <__vector_10>
+  16:	17 c0       	rjmp	.+46     	; 0x46 <__bad_interrupt>
+  18:	16 c0       	rjmp	.+44     	; 0x46 <__bad_interrupt>
+  1a:	15 c0       	rjmp	.+42     	; 0x46 <__bad_interrupt>
+  1c:	14 c0       	rjmp	.+40     	; 0x46 <__bad_interrupt>
+  1e:	13 c0       	rjmp	.+38     	; 0x46 <__bad_interrupt>
+  20:	12 c0       	rjmp	.+36     	; 0x46 <__bad_interrupt>
+  22:	11 c0       	rjmp	.+34     	; 0x46 <__bad_interrupt>
+  24:	10 c0       	rjmp	.+32     	; 0x46 <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_clear_bss>:
+  32:	20 e0       	ldi	r18, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	01 c0       	rjmp	.+2      	; 0x3c <.do_clear_bss_start>
+
+0000003a <.do_clear_bss_loop>:
+  3a:	1d 92       	st	X+, r1
+
+0000003c <.do_clear_bss_start>:
+  3c:	a2 36       	cpi	r26, 0x62	; 98
+  3e:	b2 07       	cpc	r27, r18
+  40:	e1 f7       	brne	.-8      	; 0x3a <.do_clear_bss_loop>
+  42:	38 d0       	rcall	.+112    	; 0xb4 <main>
+  44:	84 c0       	rjmp	.+264    	; 0x14e <_exit>
+
+00000046 <__bad_interrupt>:
+  46:	dc cf       	rjmp	.-72     	; 0x0 <__vectors>
+
+00000048 <SPI_Master_Settings>:
+int counter = 0;
+
+// Настройки SPI_Master
+void SPI_Master_Settings (void)
+{
+	DDRB |= (1<<MOSI) | (1<<SCK) | (1<<SS);
+  48:	87 b3       	in	r24, 0x17	; 23
+  4a:	8c 62       	ori	r24, 0x2C	; 44
+  4c:	87 bb       	out	0x17, r24	; 23
+	PORTB |= (1<<SS); // "Этот пин нужно установить раньше
+  4e:	88 b3       	in	r24, 0x18	; 24
+  50:	84 60       	ori	r24, 0x04	; 4
+  52:	88 bb       	out	0x18, r24	; 24
+	// настроек регистра контроля, т.е. раньше команды SPCR |= (1<<MSTR)
+	DDRB &= ~(1<<MISO);
+  54:	87 b3       	in	r24, 0x17	; 23
+  56:	8f 7e       	andi	r24, 0xEF	; 239
+  58:	87 bb       	out	0x17, r24	; 23
+	SPCR |= (1<<SPIE); // Разрешаем прерывания по SPI
+  5a:	8d b1       	in	r24, 0x0d	; 13
+  5c:	80 68       	ori	r24, 0x80	; 128
+  5e:	8d b9       	out	0x0d, r24	; 13
+	SPCR |= (1<<SPE); // Включаем SPI
+  60:	8d b1       	in	r24, 0x0d	; 13
+  62:	80 64       	ori	r24, 0x40	; 64
+  64:	8d b9       	out	0x0d, r24	; 13
+	SPCR |= (1<<MSTR); // МК Master
+  66:	8d b1       	in	r24, 0x0d	; 13
+  68:	80 61       	ori	r24, 0x10	; 16
+  6a:	8d b9       	out	0x0d, r24	; 13
+	SPSR &= ~(1<<SPI2X); // Без удвоения частоты
+  6c:	8e b1       	in	r24, 0x0e	; 14
+  6e:	8e 7f       	andi	r24, 0xFE	; 254
+  70:	8e b9       	out	0x0e, r24	; 14
+	
+	// Делим частоту МК на 16
+	SPCR &= ~(1<<SPR1);
+  72:	8d b1       	in	r24, 0x0d	; 13
+  74:	8d 7f       	andi	r24, 0xFD	; 253
+  76:	8d b9       	out	0x0d, r24	; 13
+	SPCR |= (1<<SPR0);
+  78:	8d b1       	in	r24, 0x0d	; 13
+  7a:	81 60       	ori	r24, 0x01	; 1
+  7c:	8d b9       	out	0x0d, r24	; 13
+	
+	SPCR |= (1<<CPOL); // Импульсы отрицательной полярности
+  7e:	8d b1       	in	r24, 0x0d	; 13
+  80:	88 60       	ori	r24, 0x08	; 8
+  82:	8d b9       	out	0x0d, r24	; 13
+	SPCR |= (1<<CPHA); // Выборка данных по заднему фронту
+  84:	8d b1       	in	r24, 0x0d	; 13
+  86:	84 60       	ori	r24, 0x04	; 4
+  88:	8d b9       	out	0x0d, r24	; 13
+	SPCR &= ~(1<<DORD); // Первым передается старший бит
+  8a:	8d b1       	in	r24, 0x0d	; 13
+  8c:	8f 7d       	andi	r24, 0xDF	; 223
+  8e:	8d b9       	out	0x0d, r24	; 13
+  90:	08 95       	ret
+
+00000092 <__vector_10>:
+	
+}
+
+ISR (SPI_STC_vect)
+{
+  92:	1f 92       	push	r1
+  94:	0f 92       	push	r0
+  96:	0f b6       	in	r0, 0x3f	; 63
+  98:	0f 92       	push	r0
+  9a:	11 24       	eor	r1, r1
+  9c:	8f 93       	push	r24
+	while(~SPSR&(1<<SPIF))
+  9e:	77 9b       	sbis	0x0e, 7	; 14
+  a0:	fe cf       	rjmp	.-4      	; 0x9e <__vector_10+0xc>
+	;
+	PORTB |= (1<<SS);
+  a2:	88 b3       	in	r24, 0x18	; 24
+  a4:	84 60       	ori	r24, 0x04	; 4
+  a6:	88 bb       	out	0x18, r24	; 24
+}
+  a8:	8f 91       	pop	r24
+  aa:	0f 90       	pop	r0
+  ac:	0f be       	out	0x3f, r0	; 63
+  ae:	0f 90       	pop	r0
+  b0:	1f 90       	pop	r1
+  b2:	18 95       	reti
+
+000000b4 <main>:
+
+
+int main(void)
+{
+    // Кнопки
+    DDRC &= ~((1<<1) | (1<<0));
+  b4:	84 b3       	in	r24, 0x14	; 20
+  b6:	8c 7f       	andi	r24, 0xFC	; 252
+  b8:	84 bb       	out	0x14, r24	; 20
+    PORTC |= (1<<1) | (1<<0);
+  ba:	85 b3       	in	r24, 0x15	; 21
+  bc:	83 60       	ori	r24, 0x03	; 3
+  be:	85 bb       	out	0x15, r24	; 21
+    
+    SPI_Master_Settings();
+  c0:	c3 df       	rcall	.-122    	; 0x48 <SPI_Master_Settings>
+    sei();
+  c2:	78 94       	sei
+	
+	
+    while (1) 
+    {
+		if (~PINC&(1<<0))
+  c4:	98 99       	sbic	0x13, 0	; 19
+  c6:	21 c0       	rjmp	.+66     	; 0x10a <main+0x56>
+		{
+			counter++;
+  c8:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+  cc:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+  d0:	01 96       	adiw	r24, 0x01	; 1
+  d2:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+  d6:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+			if(counter>=100) counter = 100;
+  da:	84 36       	cpi	r24, 0x64	; 100
+  dc:	91 05       	cpc	r25, r1
+  de:	34 f0       	brlt	.+12     	; 0xec <main+0x38>
+  e0:	84 e6       	ldi	r24, 0x64	; 100
+  e2:	90 e0       	ldi	r25, 0x00	; 0
+  e4:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+  e8:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+			PORTB &= ~(1<<SS);
+  ec:	88 b3       	in	r24, 0x18	; 24
+  ee:	8b 7f       	andi	r24, 0xFB	; 251
+  f0:	88 bb       	out	0x18, r24	; 24
+			SPDR = counter;
+  f2:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+  f6:	8f b9       	out	0x0f, r24	; 15
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  f8:	2f e5       	ldi	r18, 0x5F	; 95
+  fa:	8a ee       	ldi	r24, 0xEA	; 234
+  fc:	90 e0       	ldi	r25, 0x00	; 0
+  fe:	21 50       	subi	r18, 0x01	; 1
+ 100:	80 40       	sbci	r24, 0x00	; 0
+ 102:	90 40       	sbci	r25, 0x00	; 0
+ 104:	e1 f7       	brne	.-8      	; 0xfe <main+0x4a>
+ 106:	00 c0       	rjmp	.+0      	; 0x108 <main+0x54>
+ 108:	00 00       	nop
+			_delay_ms(300);
+		}
+		
+		if (~PINC&(1<<1))
+ 10a:	99 99       	sbic	0x13, 1	; 19
+ 10c:	db cf       	rjmp	.-74     	; 0xc4 <main+0x10>
+		{
+			counter--;
+ 10e:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 112:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 116:	01 97       	sbiw	r24, 0x01	; 1
+ 118:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 11c:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+			if(counter<=0) counter = 0;
+ 120:	18 16       	cp	r1, r24
+ 122:	19 06       	cpc	r1, r25
+ 124:	24 f0       	brlt	.+8      	; 0x12e <main+0x7a>
+ 126:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 12a:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <__DATA_REGION_ORIGIN__>
+			PORTB &= ~(1<<SS);
+ 12e:	88 b3       	in	r24, 0x18	; 24
+ 130:	8b 7f       	andi	r24, 0xFB	; 251
+ 132:	88 bb       	out	0x18, r24	; 24
+			SPDR = counter;
+ 134:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 138:	8f b9       	out	0x0f, r24	; 15
+ 13a:	2f e5       	ldi	r18, 0x5F	; 95
+ 13c:	8a ee       	ldi	r24, 0xEA	; 234
+ 13e:	90 e0       	ldi	r25, 0x00	; 0
+ 140:	21 50       	subi	r18, 0x01	; 1
+ 142:	80 40       	sbci	r24, 0x00	; 0
+ 144:	90 40       	sbci	r25, 0x00	; 0
+ 146:	e1 f7       	brne	.-8      	; 0x140 <main+0x8c>
+ 148:	00 c0       	rjmp	.+0      	; 0x14a <main+0x96>
+ 14a:	00 00       	nop
+ 14c:	bb cf       	rjmp	.-138    	; 0xc4 <main+0x10>
+
+0000014e <_exit>:
+ 14e:	f8 94       	cli
+
+00000150 <__stop_program>:
+ 150:	ff cf       	rjmp	.-2      	; 0x150 <__stop_program>
