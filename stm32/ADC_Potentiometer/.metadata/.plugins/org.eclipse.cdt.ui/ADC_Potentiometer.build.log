@@ -1,0 +1,10 @@
+04:00:57 **** Incremental Build of configuration Debug for project ADC_Potentiometer ****
+make -j8 all 
+arm-none-eabi-size   ADC_Potentiometer.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7856	     20	   1620	   9496	   2518	ADC_Potentiometer.elf
+Finished building: default.size.stdout
+ 
+
+04:00:57 Build Finished. 0 errors, 0 warnings. (took 209ms)
+

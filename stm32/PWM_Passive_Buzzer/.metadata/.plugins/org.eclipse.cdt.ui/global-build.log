@@ -1,0 +1,14 @@
+03:27:12 **** Incremental Build of configuration Debug for project PWM_Passive_Buzzer ****
+make -j8 all 
+arm-none-eabi-size   PWM_Passive_Buzzer.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7864	     20	   1644	   9528	   2538	PWM_Passive_Buzzer.elf
+Finished building: default.size.stdout
+ 
+03:28:54 **** Incremental Build of configuration Debug for project PWM_Passive_Buzzer ****
+make -j8 all 
+arm-none-eabi-size   PWM_Passive_Buzzer.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7864	     20	   1644	   9528	   2538	PWM_Passive_Buzzer.elf
+Finished building: default.size.stdout
+ 

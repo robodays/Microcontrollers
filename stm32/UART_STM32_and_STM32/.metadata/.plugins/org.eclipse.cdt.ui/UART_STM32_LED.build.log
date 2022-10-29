@@ -1,0 +1,10 @@
+22:38:34 **** Incremental Build of configuration Debug for project UART_STM32_LED ****
+make -j8 all 
+arm-none-eabi-size   UART_STM32_LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5888	     20	   1644	   7552	   1d80	UART_STM32_LED.elf
+Finished building: default.size.stdout
+ 
+
+22:38:34 Build Finished. 0 errors, 0 warnings. (took 512ms)
+

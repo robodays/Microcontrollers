@@ -1,0 +1,10 @@
+15:57:40 **** Incremental Build of configuration Debug for project Temperature_Humidity_Sensor_DHT11 ****
+make -j8 all 
+arm-none-eabi-size   Temperature_Humidity_Sensor_DHT11.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10608	     20	   1668	  12296	   3008	Temperature_Humidity_Sensor_DHT11.elf
+Finished building: default.size.stdout
+ 
+
+15:57:40 Build Finished. 0 errors, 0 warnings. (took 202ms)
+

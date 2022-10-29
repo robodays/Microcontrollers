@@ -1,0 +1,52 @@
+Enable USART1 asynchronous
+
+Parameter Settings --> Basic Parameters --> Baud rate 9600
+
+NVIC Settings --> USART1 global interrupt --> (Tick)
+
+Click Timer > Click TIM2 >
+
+Clock Source set to Internal Clock
+
+Channel2 set to PWM Generation CH2
+
+Configuration > Parameter Settings >
+
+Prescaler set to 127
+
+Counter Period 625
+
+Additional code on top of STM32CubeIDE generated code
+/* USER CODE BEGIN PV */
+uint8_t rx_data;
+int pwm = 0;
+/* USER CODE END PV */
+
+  /* USER CODE BEGIN 2 */
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+  HAL_UART_Receive_IT(&huart1,&rx_data,1);
+  // receive data (one character only)
+  /* USER CODE END 2 */
+
+/* USER CODE BEGIN 4 */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+  if(huart->Instance==USART1)
+  {
+    if(rx_data == 82) //if "R" reset
+    {
+      pwm = 0;
+    }
+    else  if(rx_data == 65) // if  "A" set pwm
+    {
+      __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2, pwm * 2);
+    }
+    else  if(rx_data > 47 && rx_data < 58) // if "0" - "9" construct
+    {
+      pwm = pwm * 10 + rx_data - 48;
+    }
+    // Enabling interrupt receive again (one character only)
+    HAL_UART_Receive_IT(&huart1,&rx_data,1);
+  }
+}
+/* USER CODE END 4 */

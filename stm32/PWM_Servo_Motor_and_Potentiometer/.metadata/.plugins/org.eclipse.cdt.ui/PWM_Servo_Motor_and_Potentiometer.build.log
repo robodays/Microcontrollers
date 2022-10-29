@@ -1,0 +1,10 @@
+16:22:11 **** Incremental Build of configuration Debug for project PWM_Servo_Motor_and_Potentiometer ****
+make -j8 all 
+arm-none-eabi-size   PWM_Servo_Motor_and_Potentiometer.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13220	     20	   1692	  14932	   3a54	PWM_Servo_Motor_and_Potentiometer.elf
+Finished building: default.size.stdout
+ 
+
+16:22:12 Build Finished. 0 errors, 0 warnings. (took 203ms)
+

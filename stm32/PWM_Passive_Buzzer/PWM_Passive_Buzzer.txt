@@ -1,0 +1,30 @@
+STM32CubeIDE Settings
+Click Timer > Click TIM2 >
+
+Clock Source set to Internal Clock
+
+Channel2 set to PWM Generation CH2
+
+Configuration > Parameter Settings >
+
+Prescaler set to 127
+
+Counter Period 20
+
+Additional code on top of STM32CubeIDE generated code
+  /* USER CODE BEGIN 2 */
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2); 
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    int x;
+    for(x=10; x<30; x=x+1)
+    {
+      __HAL_TIM_SET_AUTORELOAD(&htim2, x*2);
+      __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2, x);
+      HAL_Delay(100);
+    }
+    /* USER CODE END WHILE */

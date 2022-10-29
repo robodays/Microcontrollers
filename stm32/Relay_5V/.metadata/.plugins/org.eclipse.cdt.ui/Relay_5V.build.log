@@ -1,0 +1,10 @@
+03:50:57 **** Incremental Build of configuration Debug for project Relay_5V ****
+make -j8 all 
+arm-none-eabi-size   Relay_5V.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4616	     20	   1572	   6208	   1840	Relay_5V.elf
+Finished building: default.size.stdout
+ 
+
+03:50:57 Build Finished. 0 errors, 0 warnings. (took 199ms)
+

@@ -1,0 +1,10 @@
+05:05:26 **** Incremental Build of configuration Debug for project Photoresistor ****
+make -j8 all 
+arm-none-eabi-size   Photoresistor.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8712	     20	   1620	  10352	   2870	Photoresistor.elf
+Finished building: default.size.stdout
+ 
+
+05:05:26 Build Finished. 0 errors, 0 warnings. (took 212ms)
+

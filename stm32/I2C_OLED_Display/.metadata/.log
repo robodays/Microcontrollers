@@ -1,0 +1,37 @@
+!SESSION 2022-10-25 16:56:04.041 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-10-25 16:56:21.620
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-10-25 16:56:21.705
+!MESSAGE Log4j initialized with config file D:\github\mc\stm32\I2C_OLED_Display\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-10-25 16:56:29.499
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-10-25 16:57:26.765
+!MESSAGE Indexed 'I2C_OLED_Display' (17 sources, 78 headers) in 3.03 sec: 3,642 declarations; 13,147 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.012%)
+!SESSION 2022-10-25 18:50:22.469 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Framework arguments:  D:\github\mc\stm32\I2C_OLED_Display\I2C_OLED_Display\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 D:\github\mc\stm32\I2C_OLED_Display\I2C_OLED_Display\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-10-25 18:50:34.545
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-10-25 18:50:34.642
+!MESSAGE Log4j initialized with config file D:\github\mc\stm32\I2C_OLED_Display\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-10-25 18:50:40.183
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-10-25 18:50:42.673
+!MESSAGE Indexed 'I2C_OLED_Display' (22 sources, 113 headers) in 2,02 sec: 9 012 declarations; 38 797 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0,39 %)

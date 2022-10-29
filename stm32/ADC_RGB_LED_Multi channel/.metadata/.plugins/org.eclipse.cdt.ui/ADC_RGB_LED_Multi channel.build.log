@@ -1,0 +1,10 @@
+04:38:34 **** Incremental Build of configuration Debug for project ADC_RGB_LED_Multi channel ****
+make -j8 all 
+arm-none-eabi-size   ADC_RGB_LED_Multi\ channel.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10668	     20	   1716	  12404	   3074	ADC_RGB_LED_Multi channel.elf
+Finished building: default.size.stdout
+ 
+
+04:38:34 Build Finished. 0 errors, 0 warnings. (took 211ms)
+

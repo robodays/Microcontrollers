@@ -1,0 +1,10 @@
+19:11:17 **** Incremental Build of configuration Debug for project Hall_Sensor ****
+make -j8 all 
+arm-none-eabi-size   Hall_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4696	     20	   1572	   6288	   1890	Hall_Sensor.elf
+Finished building: default.size.stdout
+ 
+
+19:11:17 Build Finished. 0 errors, 0 warnings. (took 204ms)
+

@@ -1,0 +1,10 @@
+18:48:47 **** Incremental Build of configuration Debug for project Ultrasonic_Distance_Sensor ****
+make -j8 all 
+arm-none-eabi-size   Ultrasonic_Distance_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8568	     20	   1660	  10248	   2808	Ultrasonic_Distance_Sensor.elf
+Finished building: default.size.stdout
+ 
+
+18:48:47 Build Finished. 0 errors, 0 warnings. (took 208ms)
+

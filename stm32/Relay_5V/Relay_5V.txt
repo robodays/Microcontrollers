@@ -1,0 +1,16 @@
+STM32CubeIDE Settings
+Set PB9 to GPIO_Output
+
+Additional code on top of STM32CubeIDE generated code
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, 1); //On
+    HAL_Delay(1000);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, 0); //Off
+    HAL_Delay(1000);
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */

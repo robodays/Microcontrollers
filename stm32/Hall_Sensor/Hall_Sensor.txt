@@ -1,0 +1,25 @@
+STM32CubeIDE Settings
+
+Set PA1 to GPIO_Output
+
+Set PB9 to GPIO_Input
+
+Additional code on top of STM32CubeIDE generated code
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_9) == GPIO_PIN_RESET)
+    {
+      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, 1);
+    }
+    else
+    {
+      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, 0);
+    }
+    HAL_Delay(50);
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */
+

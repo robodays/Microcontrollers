@@ -1,0 +1,35 @@
+STM32CubeIDE Settings
+
+ADC1 - IN1 (tick)
+
+Parameter Settings --> ADC Settings --> Continuous Conversion Mode (Enabled)
+
+ADC2 - IN2 (tick)
+
+Parameter Settings --> ADC Settings --> Continuous Conversion Mode (Enabled)
+
+Additional code on top of STM32CubeIDE generated code
+/* USER CODE BEGIN PV */
+uint16_t readValueX;
+uint16_t readValueY;
+/* USER CODE END PV */
+
+  /* USER CODE BEGIN 2 */
+  HAL_ADC_Start(&hadc1);
+  HAL_ADC_Start(&hadc2);
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    HAL_ADC_PollForConversion(&hadc1,1000);
+    readValueX = HAL_ADC_GetValue(&hadc1);
+    HAL_ADC_PollForConversion(&hadc2,1000);
+    readValueY = HAL_ADC_GetValue(&hadc2);
+    HAL_Delay(100);
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */

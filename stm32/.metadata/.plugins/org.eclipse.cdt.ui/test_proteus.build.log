@@ -1,0 +1,10 @@
+03:06:13 **** Incremental Build of configuration Debug for project test_proteus ****
+make -j8 all 
+arm-none-eabi-size   test_proteus.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4720	     20	   1572	   6312	   18a8	test_proteus.elf
+Finished building: default.size.stdout
+ 
+
+03:06:13 Build Finished. 0 errors, 0 warnings. (took 202ms)
+

@@ -1,0 +1,70 @@
+15:14:35 **** Incremental Build of configuration Debug for project Sound_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Sound_Sensor.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\github\mc\stm32\Sound_Sensor\Sound_Sensor\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Sound_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Sound_Sensor.elf
+ 
+arm-none-eabi-size   Sound_Sensor.elf 
+arm-none-eabi-objdump -h -S  Sound_Sensor.elf  > "Sound_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+   4740	     20	   1580	   6340	   18c4	Sound_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: Sound_Sensor.list
+ 
+15:14:39 **** Incremental Build of configuration Debug for project Sound_Sensor ****
+make -j8 all 
+arm-none-eabi-size   Sound_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4740	     20	   1580	   6340	   18c4	Sound_Sensor.elf
+Finished building: default.size.stdout
+ 
+15:20:33 **** Incremental Build of configuration Debug for project Sound_Sensor ****
+make -j8 all 
+arm-none-eabi-size   Sound_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4740	     20	   1580	   6340	   18c4	Sound_Sensor.elf
+Finished building: default.size.stdout
+ 
+15:24:12 **** Incremental Build of configuration Debug for project Sound_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Sound_Sensor.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\github\mc\stm32\Sound_Sensor\Sound_Sensor\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Sound_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Sound_Sensor.elf
+ 
+arm-none-eabi-size   Sound_Sensor.elf 
+arm-none-eabi-objdump -h -S  Sound_Sensor.elf  > "Sound_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+   4736	     20	   1580	   6336	   18c0	Sound_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: Sound_Sensor.list
+ 
+15:29:06 **** Incremental Build of configuration Debug for project Sound_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Sound_Sensor.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\github\mc\stm32\Sound_Sensor\Sound_Sensor\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Sound_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Sound_Sensor.elf
+ 
+arm-none-eabi-size   Sound_Sensor.elf 
+arm-none-eabi-objdump -h -S  Sound_Sensor.elf  > "Sound_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+   4736	     20	   1580	   6336	   18c0	Sound_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: Sound_Sensor.list
+ 
+15:30:02 **** Incremental Build of configuration Debug for project Sound_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Sound_Sensor.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\github\mc\stm32\Sound_Sensor\Sound_Sensor\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Sound_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Sound_Sensor.elf
+ 
+arm-none-eabi-size   Sound_Sensor.elf 
+arm-none-eabi-objdump -h -S  Sound_Sensor.elf  > "Sound_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+   4732	     20	   1580	   6332	   18bc	Sound_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: Sound_Sensor.list
+ 

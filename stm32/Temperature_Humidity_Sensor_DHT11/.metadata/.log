@@ -1,0 +1,734 @@
+!SESSION 2022-10-27 15:40:04.448 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-10-27 15:40:18.850
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-10-27 15:40:18.928
+!MESSAGE Log4j initialized with config file D:\github\mc\stm32\Temperature_Humidity_Sensor_DHT11\.metadata\.log4j.xml
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:20.647
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:20.649
+!MESSAGE System property http.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:20.651
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:20.653
+!MESSAGE System property https.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:20.654
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:20.654
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-10-27 15:40:24.260
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.554
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.554
+!MESSAGE System property http.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.554
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.555
+!MESSAGE System property https.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.555
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.555
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.574
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.574
+!MESSAGE System property http.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.574
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.575
+!MESSAGE System property https.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.575
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.575
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.575
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.575
+!MESSAGE System property http.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.576
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.576
+!MESSAGE System property https.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.576
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.576
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.577
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.577
+!MESSAGE System property http.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.577
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.577
+!MESSAGE System property https.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.578
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.578
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.578
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.579
+!MESSAGE System property http.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.579
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.579
+!MESSAGE System property https.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.579
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.579
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.579
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.580
+!MESSAGE System property http.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.580
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.580
+!MESSAGE System property https.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.580
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.580
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.581
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.581
+!MESSAGE System property http.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.581
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.581
+!MESSAGE System property https.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.581
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.582
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.583
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.583
+!MESSAGE System property http.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.583
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.584
+!MESSAGE System property https.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.584
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.584
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.639
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.639
+!MESSAGE System property http.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.640
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.640
+!MESSAGE System property https.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.640
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.640
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.641
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.641
+!MESSAGE System property http.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.641
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.642
+!MESSAGE System property https.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.642
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.642
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.642
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.642
+!MESSAGE System property http.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.643
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.643
+!MESSAGE System property https.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.643
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.643
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.644
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.644
+!MESSAGE System property http.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.644
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.644
+!MESSAGE System property https.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.644
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.645
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.645
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.645
+!MESSAGE System property http.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.645
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.646
+!MESSAGE System property https.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.646
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.646
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.646
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.646
+!MESSAGE System property http.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.647
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.647
+!MESSAGE System property https.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.647
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.647
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.648
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.648
+!MESSAGE System property http.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.648
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.649
+!MESSAGE System property https.proxyPort is set to 4208 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.649
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:39.649
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:41.828
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:41.829
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:41.829
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:41.829
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:41.829
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:41.830
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:41.830
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:41.830
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:41.830
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:41.831
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:41.831
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:41.831
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:41.832
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:41.832
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:44.172
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:44.172
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:44.173
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:44.173
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:44.173
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:44.173
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:44.174
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:44.174
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:44.174
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:44.174
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:44.175
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:44.175
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:44.175
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:40:44.176
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:42:56.640
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:42:56.641
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:42:56.641
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:42:56.641
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:42:56.642
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:42:56.642
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:42:56.642
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:42:56.643
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:42:56.643
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:42:56.643
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:42:56.644
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:42:56.646
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:42:56.647
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:42:56.647
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:01.010
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:01.010
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:01.010
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:01.010
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:01.011
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:01.011
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:01.012
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:01.012
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:01.012
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:01.013
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:01.013
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:01.013
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:01.013
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:01.013
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:04.203
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:04.203
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:04.203
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:04.204
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:04.204
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:04.204
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:04.205
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:04.205
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:04.206
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:04.206
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:04.206
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:04.207
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:04.207
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-27 15:43:04.207
+!MESSAGE System property socksProxyPort is set to 4207 but should not be set.
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2022-10-27 15:43:28.234
+!MESSAGE Connection to https://sw-center.st.com/stm32cubeide/updatesite1/1.2.1/content.xml.xz failed on SOCKS server general failure. Retry attempt 0 started
+!STACK 0
+java.net.SocketException: SOCKS server general failure
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:546)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory$1.run(SSLConnectionSocketFactory.java:219)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:216)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:148)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:396)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:158)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:168)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:136)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:175)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:133)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:75)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1009)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1001)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:997)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2022-10-27 15:43:28.445
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: Unable to read repository at https://sw-center.st.com/stm32cubeide/updatesite1/1.2.1/content.xml.xz.
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.updateCache(CacheManager.java:459)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCacheFromFile(CacheManager.java:138)
+	at org.eclipse.equinox.internal.p2.metadata.repository.XZedSimpleMetadataRepositoryFactory.getLocalFile(XZedSimpleMetadataRepositoryFactory.java:60)
+	at org.eclipse.equinox.internal.p2.metadata.repository.XZedSimpleMetadataRepositoryFactory.load(XZedSimpleMetadataRepositoryFactory.java:80)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:63)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:787)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:685)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.addChild(CompositeMetadataRepository.java:171)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.<init>(CompositeMetadataRepository.java:113)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepositoryFactory.load(CompositeMetadataRepositoryFactory.java:124)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:63)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:787)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:685)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:152)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:130)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:78)
+Caused by: java.net.SocketException: SOCKS server general failure
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:546)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory$1.run(SSLConnectionSocketFactory.java:219)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:216)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:148)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:396)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:158)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:168)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:136)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:175)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:133)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:75)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1009)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1001)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:997)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1002 2022-10-27 15:43:28.446
+!MESSAGE Unable to read repository at https://sw-center.st.com/stm32cubeide/updatesite1/1.2.1/content.xml.xz.
+!STACK 0
+java.net.SocketException: SOCKS server general failure
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:546)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory$1.run(SSLConnectionSocketFactory.java:219)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:216)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:148)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:396)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:158)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:168)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:136)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:175)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:133)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:75)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1009)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1001)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:997)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1002 2022-10-27 15:43:28.448
+!MESSAGE Unable to read repository at https://sw-center.st.com/stm32cubeide/updatesite1.
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: Unable to read repository at https://sw-center.st.com/stm32cubeide/updatesite1/1.2.1/content.xml.xz.
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.updateCache(CacheManager.java:459)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCacheFromFile(CacheManager.java:138)
+	at org.eclipse.equinox.internal.p2.metadata.repository.XZedSimpleMetadataRepositoryFactory.getLocalFile(XZedSimpleMetadataRepositoryFactory.java:60)
+	at org.eclipse.equinox.internal.p2.metadata.repository.XZedSimpleMetadataRepositoryFactory.load(XZedSimpleMetadataRepositoryFactory.java:80)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:63)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:787)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:685)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.addChild(CompositeMetadataRepository.java:171)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.<init>(CompositeMetadataRepository.java:113)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepositoryFactory.load(CompositeMetadataRepositoryFactory.java:124)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:63)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:787)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:685)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:152)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:130)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:78)
+Caused by: java.net.SocketException: SOCKS server general failure
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:546)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory$1.run(SSLConnectionSocketFactory.java:219)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:216)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:148)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:396)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:158)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:168)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:136)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:175)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:133)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:75)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1009)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1001)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:997)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1002 2022-10-27 15:43:28.448
+!MESSAGE Unable to read repository at https://sw-center.st.com/stm32cubeide/updatesite1/1.2.1/content.xml.xz.
+!STACK 0
+java.net.SocketException: SOCKS server general failure
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:546)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory$1.run(SSLConnectionSocketFactory.java:219)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:216)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:148)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:396)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:158)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:168)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:136)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:175)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:133)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:75)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1009)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1001)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:997)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-10-27 15:43:53.324
+!MESSAGE Indexed 'Temperature_Humidity_Sensor_DHT11' (17 sources, 78 headers) in 1.65 sec: 3,642 declarations; 13,147 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.012%)
+
+!ENTRY org.eclipse.core.resources 4 566 2022-10-27 17:34:24.359
+!MESSAGE Workspace was not properly initialized or has already shutdown.
