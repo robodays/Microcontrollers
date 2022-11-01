@@ -1,0 +1,427 @@
+!SESSION 2022-10-29 04:44:44.872 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-10-29 04:54:24.289
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-10-29 04:54:24.360
+!MESSAGE Log4j initialized with config file D:\github\mc\stm32\IR_Sensor_Remote\.metadata\.log4j.xml
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:26.351
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:26.353
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:26.353
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:26.353
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:26.354
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:26.354
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.029
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.029
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.029
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.030
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.030
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.030
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.054
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.054
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.054
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.055
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.055
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.056
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.056
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.057
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.058
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.058
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.059
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.060
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.060
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.061
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.061
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.062
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.063
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.063
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.064
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.064
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.065
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.065
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.065
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.065
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.066
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.066
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.066
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.066
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.067
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.067
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.068
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.068
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.068
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.068
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.069
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.069
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.071
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.071
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.071
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.072
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.072
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.072
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.135
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.136
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.136
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.136
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.136
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.136
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.137
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.137
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.137
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.137
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.137
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.138
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.138
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.138
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.138
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.139
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.139
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.139
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.139
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.139
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.140
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.140
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.140
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.140
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.140
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.141
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.141
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.141
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.142
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.142
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.142
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.142
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.142
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.143
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.143
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.143
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.143
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.143
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.144
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.144
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.144
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 04:54:34.144
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-10-29 04:54:37.100
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-10-29 04:55:11.260
+!MESSAGE Indexed 'IR_Sensor_Remote' (17 sources, 78 headers) in 1.8 sec: 3,642 declarations; 13,147 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.012%)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 104 2022-10-29 06:34:43.859
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: D:\github\mc\stm32\IR_Sensor_Remote\IR_Sensor_Remote\Debug\IR_Sensor_Remote.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:130)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:330)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:152)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:328)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 104 2022-10-29 06:34:43.860
+!MESSAGE D:\github\mc\stm32\IR_Sensor_Remote\IR_Sensor_Remote\Debug\IR_Sensor_Remote.elf not found
+!STACK 0
+java.io.FileNotFoundException: D:\github\mc\stm32\IR_Sensor_Remote\IR_Sensor_Remote\Debug\IR_Sensor_Remote.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:130)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:330)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:152)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:328)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2022-10-29 06:59:29.416
+!MESSAGE An internal error occurred during: "Execute Debug Command".
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: assertion failed: The application has not been initialized.
+	at org.eclipse.core.runtime.Assert.isTrue(Assert.java:113)
+	at org.eclipse.core.internal.runtime.InternalPlatform.assertInitialized(InternalPlatform.java:139)
+	at org.eclipse.core.internal.runtime.InternalPlatform.getAdapterManager(InternalPlatform.java:160)
+	at org.eclipse.core.runtime.Platform.getAdapterManager(Platform.java:649)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunch.getAdapter(GdbLaunch.java:454)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunch.disconnect(GdbLaunch.java:338)
+	at org.eclipse.debug.internal.core.commands.DisconnectCommand.execute(DisconnectCommand.java:35)
+	at org.eclipse.debug.internal.core.commands.ForEachCommand.doExecute(ForEachCommand.java:36)
+	at org.eclipse.debug.core.commands.AbstractDebugCommand$1.run(AbstractDebugCommand.java:215)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 2 2 2022-10-29 06:59:29.741
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob
+!SESSION 2022-10-29 07:00:54.153 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-10-29 07:01:01.684
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-10-29 07:01:01.774
+!MESSAGE Log4j initialized with config file D:\github\mc\stm32\IR_Sensor_Remote\.metadata\.log4j.xml
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 07:01:05.809
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 07:01:05.809
+!MESSAGE System property http.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 07:01:05.810
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 07:01:05.810
+!MESSAGE System property https.proxyPort is set to 11940 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 07:01:05.810
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-10-29 07:01:05.811
+!MESSAGE System property socksProxyPort is set to 11939 but should not be set.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-10-29 07:01:08.636
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 4 1002 2022-10-29 07:02:21.295
+!MESSAGE Unable to read repository at https://download.eclipse.org/releases/2022-03/compositeContent.xml.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Transport initialization error.
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryStatusHelper.fromExceptionMessage(RepositoryStatusHelper.java:109)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryStatusHelper.fromMessage(RepositoryStatusHelper.java:105)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.sendBrowseRequest(FileInfoReader.java:166)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFiles(FileInfoReader.java:109)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFile(FileInfoReader.java:125)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getLastModified(FileInfoReader.java:130)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.getLastModified(RepositoryTransport.java:249)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.getLastModified(CacheManager.java:283)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:231)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepositoryFactory.getLocalFile(CompositeMetadataRepositoryFactory.java:77)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepositoryFactory.load(CompositeMetadataRepositoryFactory.java:100)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:63)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:787)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:685)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:152)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:130)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:78)
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 0 2022-10-29 07:02:21.296
+!MESSAGE Transport initialization error.
+
+!ENTRY org.eclipse.equinox.p2.updatechecker 4 0 2022-10-29 07:02:21.297
+!MESSAGE Exception in update check thread
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.handleRemoteIndexFile(AbstractRepositoryManager.java:738)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadIndexFile(AbstractRepositoryManager.java:732)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:674)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:110)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:105)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:152)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:130)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:78)

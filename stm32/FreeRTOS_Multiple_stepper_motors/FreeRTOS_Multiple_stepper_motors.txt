@@ -1,0 +1,218 @@
+STM32CubeIDE Settings
+Click SYS > Timebase Source > Select any timers (TIM3)
+
+Click RCC > High Speed Clock (HSE) to Crystal/Ceramic Resonator
+
+Click Clock Configuration tab > HCLK (MHz) to 72
+
+Click Pinout and Configuration tab
+
+Click Middelware > Click FREERTOS > Select Interface to CMSIS_V1
+
+Configuration > Advanced Settings > USE_NEWLIB_REENTRANT (Enabled)
+
+Configuration > Tasks and Queues
+
+Rename the DefaultTask to Motor1
+
+Create another task named Motor2
+
+Change Priority to osPriorityNormal for all tasks
+
+Click Timer > Click TIM1 >
+
+Clock Source set to Internal Clock
+
+Configuration > Parameter Settings >
+
+Prescaler set to 71
+
+Click Timer > Click TIM2 >
+
+Clock Source set to Internal Clock
+
+Configuration > Parameter Settings >
+
+Prescaler set to 71
+
+Set PA1, PA2, PA3, PA4, PA5 and PA6 GPIO_Output
+
+Additional code on top of STM32CubeIDE generated code
+/* USER CODE BEGIN 0 */
+#define DIR_PIN GPIO_PIN_1  // for motor1
+#define DIR_PORT GPIOA      // for motor1
+#define STEP_PIN GPIO_PIN_2 // for motor1
+#define STEP_PORT GPIOA     // for motor1
+#define IN1_PIN GPIO_PIN_6  // for motor2
+#define IN1_PORT GPIOA      // for motor2
+#define IN2_PIN GPIO_PIN_5  // for motor2
+#define IN2_PORT GPIOA      // for motor2
+#define IN3_PIN GPIO_PIN_4  // for motor2
+#define IN3_PORT GPIOA      // for motor2
+#define IN4_PIN GPIO_PIN_3  // for motor2
+#define IN4_PORT GPIOA      // for motor2
+
+// micro seconds delay for motor1
+void microDelay1 (uint16_t delay)
+{
+  __HAL_TIM_SET_COUNTER(&htim1, 0);
+  while (__HAL_TIM_GET_COUNTER(&htim1) < delay);
+}
+
+// micro seconds delay for motor2
+void microDelay2 (uint16_t delay)
+{
+  __HAL_TIM_SET_COUNTER(&htim2, 0);
+  while (__HAL_TIM_GET_COUNTER(&htim2) < delay);
+}
+
+// motor1 for both directions
+void step (int steps, uint8_t direction, uint16_t delay)
+{
+  int x;
+  if (direction == 0)
+    HAL_GPIO_WritePin(DIR_PORT, DIR_PIN, GPIO_PIN_SET);
+  else
+    HAL_GPIO_WritePin(DIR_PORT, DIR_PIN, GPIO_PIN_RESET);
+  for(x=0; x<steps; x=x+1)
+  {
+    HAL_GPIO_WritePin(STEP_PORT, STEP_PIN, GPIO_PIN_SET);
+    microDelay1(delay);
+    HAL_GPIO_WritePin(STEP_PORT, STEP_PIN, GPIO_PIN_RESET);
+    microDelay1(delay);
+  }
+}
+
+// CCV - Counter Clockwise motor2
+void stepCCV (int steps, uint16_t delay) 
+{
+  for(int x=0; x<steps; x=x+1)
+  {
+    HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, GPIO_PIN_SET);   // IN1
+    HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, GPIO_PIN_RESET); // IN2
+    HAL_GPIO_WritePin(IN3_PORT, IN3_PIN, GPIO_PIN_RESET); // IN3
+    HAL_GPIO_WritePin(IN4_PORT, IN4_PIN, GPIO_PIN_RESET); // IN4
+    microDelay2(delay);
+    HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, GPIO_PIN_SET);   // IN1
+    HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, GPIO_PIN_SET);   // IN2
+    HAL_GPIO_WritePin(IN3_PORT, IN3_PIN, GPIO_PIN_RESET); // IN3
+    HAL_GPIO_WritePin(IN4_PORT, IN4_PIN, GPIO_PIN_RESET); // IN4
+    microDelay2(delay);
+    HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, GPIO_PIN_RESET); // IN1
+    HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, GPIO_PIN_SET);   // IN2
+    HAL_GPIO_WritePin(IN3_PORT, IN3_PIN, GPIO_PIN_RESET); // IN3
+    HAL_GPIO_WritePin(IN4_PORT, IN4_PIN, GPIO_PIN_RESET); // IN4
+    microDelay2(delay);
+    HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, GPIO_PIN_RESET); // IN1
+    HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, GPIO_PIN_SET);   // IN2
+    HAL_GPIO_WritePin(IN3_PORT, IN3_PIN, GPIO_PIN_SET);   // IN3
+    HAL_GPIO_WritePin(IN4_PORT, IN4_PIN, GPIO_PIN_RESET); // IN4
+    microDelay2(delay);
+    HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, GPIO_PIN_RESET); // IN1
+    HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, GPIO_PIN_RESET); // IN2
+    HAL_GPIO_WritePin(IN3_PORT, IN3_PIN, GPIO_PIN_SET);   // IN3
+    HAL_GPIO_WritePin(IN4_PORT, IN4_PIN, GPIO_PIN_RESET); // IN4
+    microDelay2(delay);
+    HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, GPIO_PIN_RESET); // IN1
+    HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, GPIO_PIN_RESET); // IN2
+    HAL_GPIO_WritePin(IN3_PORT, IN3_PIN, GPIO_PIN_SET);   // IN3
+    HAL_GPIO_WritePin(IN4_PORT, IN4_PIN, GPIO_PIN_SET);   // IN4
+    microDelay2(delay);
+    HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, GPIO_PIN_RESET); // IN1
+    HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, GPIO_PIN_RESET); // IN2
+    HAL_GPIO_WritePin(IN3_PORT, IN3_PIN, GPIO_PIN_RESET); // IN3
+    HAL_GPIO_WritePin(IN4_PORT, IN4_PIN, GPIO_PIN_SET);   // IN4
+    microDelay2(delay);
+    HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, GPIO_PIN_SET);   // IN1
+    HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, GPIO_PIN_RESET); // IN2
+    HAL_GPIO_WritePin(IN3_PORT, IN3_PIN, GPIO_PIN_RESET); // IN3
+    HAL_GPIO_WritePin(IN4_PORT, IN4_PIN, GPIO_PIN_SET);   // IN4
+    microDelay2(delay);
+  }
+}
+
+// CV - Clockwise motor1
+void stepCV (int steps, uint16_t delay) 
+{
+  for(int x=0; x<steps; x=x+1)
+  {
+    HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, GPIO_PIN_SET);   // IN1
+    HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, GPIO_PIN_RESET); // IN2
+    HAL_GPIO_WritePin(IN3_PORT, IN3_PIN, GPIO_PIN_RESET); // IN3
+    HAL_GPIO_WritePin(IN4_PORT, IN4_PIN, GPIO_PIN_SET);   // IN4
+    microDelay2(delay);
+    HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, GPIO_PIN_RESET); // IN1
+    HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, GPIO_PIN_RESET); // IN2
+    HAL_GPIO_WritePin(IN3_PORT, IN3_PIN, GPIO_PIN_RESET); // IN3
+    HAL_GPIO_WritePin(IN4_PORT, IN4_PIN, GPIO_PIN_SET);   // IN4
+    microDelay2(delay);
+    HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, GPIO_PIN_RESET); // IN1
+    HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, GPIO_PIN_RESET); // IN2
+    HAL_GPIO_WritePin(IN3_PORT, IN3_PIN, GPIO_PIN_SET);   // IN3
+    HAL_GPIO_WritePin(IN4_PORT, IN4_PIN, GPIO_PIN_SET);   // IN4
+    microDelay2(delay);
+    HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, GPIO_PIN_RESET); // IN1
+    HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, GPIO_PIN_RESET); // IN2
+    HAL_GPIO_WritePin(IN3_PORT, IN3_PIN, GPIO_PIN_SET);   // IN3
+    HAL_GPIO_WritePin(IN4_PORT, IN4_PIN, GPIO_PIN_RESET); // IN4
+    microDelay2(delay);
+    HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, GPIO_PIN_RESET); // IN1
+    HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, GPIO_PIN_SET);   // IN2
+    HAL_GPIO_WritePin(IN3_PORT, IN3_PIN, GPIO_PIN_SET);   // IN3
+    HAL_GPIO_WritePin(IN4_PORT, IN4_PIN, GPIO_PIN_RESET); // IN4
+    microDelay2(delay);
+    HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, GPIO_PIN_RESET); // IN1
+    HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, GPIO_PIN_SET);   // IN2
+    HAL_GPIO_WritePin(IN3_PORT, IN3_PIN, GPIO_PIN_RESET); // IN3
+    HAL_GPIO_WritePin(IN4_PORT, IN4_PIN, GPIO_PIN_RESET); // IN4
+    microDelay2(delay);
+    HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, GPIO_PIN_SET);   // IN1
+    HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, GPIO_PIN_SET);   // IN2
+    HAL_GPIO_WritePin(IN3_PORT, IN3_PIN, GPIO_PIN_RESET); // IN3
+    HAL_GPIO_WritePin(IN4_PORT, IN4_PIN, GPIO_PIN_RESET); // IN4
+    microDelay2(delay);
+    HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, GPIO_PIN_SET);   // IN1
+    HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, GPIO_PIN_RESET); // IN2
+    HAL_GPIO_WritePin(IN3_PORT, IN3_PIN, GPIO_PIN_RESET); // IN3
+    HAL_GPIO_WritePin(IN4_PORT, IN4_PIN, GPIO_PIN_RESET); // IN4
+    microDelay2(delay);
+  }
+}
+/* USER CODE END 0 */
+
+  /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start(&htim1);
+  HAL_TIM_Base_Start(&htim2);
+  /* USER CODE END 2 */
+
+void StartMotor1(void const * argument)
+{
+  /* USER CODE BEGIN 5 */
+  /* Infinite loop */
+  for(;;)
+  {
+    for(int y=0; y<8; y=y+1) // 8 times
+    {
+      step(25, 0, 800); // 25 steps (45 degrees) CCV
+      osDelay(500);
+    }
+    step(800, 1, 5000); // 800 steps (4 revolutions ) CV
+    osDelay(1000);
+  }
+  /* USER CODE END 5 */
+}
+
+void StartMotor2(void const * argument)
+{
+  /* USER CODE BEGIN StartMotor2 */
+  /* Infinite loop */
+  for(;;)
+  {
+    // 512 full rev & 1 rpm - 14648
+    stepCV(256, 1000);  // 256 half revolution
+    osDelay(100);
+    stepCCV(128, 1000); // 128 quarter revolution
+    osDelay(100);
+  }
+  /* USER CODE END StartMotor2 */
+}

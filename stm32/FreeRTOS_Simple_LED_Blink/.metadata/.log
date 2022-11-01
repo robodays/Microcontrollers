@@ -1,0 +1,306 @@
+!SESSION 2022-11-01 02:41:10.298 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-11-01 02:42:00.892
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-11-01 02:42:00.952
+!MESSAGE Log4j initialized with config file D:\github\mc\stm32\FreeRTOS_Simple_LED_Blink\.metadata\.log4j.xml
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:02.210
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:02.211
+!MESSAGE System property http.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:02.211
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:02.212
+!MESSAGE System property https.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:02.213
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:02.213
+!MESSAGE System property socksProxyPort is set to 2604 but should not be set.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-11-01 02:42:04.855
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.518
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.518
+!MESSAGE System property http.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.519
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.519
+!MESSAGE System property https.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.519
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.519
+!MESSAGE System property socksProxyPort is set to 2604 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.537
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.538
+!MESSAGE System property http.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.538
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.539
+!MESSAGE System property https.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.539
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.539
+!MESSAGE System property socksProxyPort is set to 2604 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.540
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.540
+!MESSAGE System property http.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.540
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.541
+!MESSAGE System property https.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.541
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.542
+!MESSAGE System property socksProxyPort is set to 2604 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.542
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.542
+!MESSAGE System property http.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.543
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.543
+!MESSAGE System property https.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.543
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.543
+!MESSAGE System property socksProxyPort is set to 2604 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.544
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.544
+!MESSAGE System property http.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.544
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.544
+!MESSAGE System property https.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.545
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.545
+!MESSAGE System property socksProxyPort is set to 2604 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.545
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.545
+!MESSAGE System property http.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.546
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.546
+!MESSAGE System property https.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.546
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.546
+!MESSAGE System property socksProxyPort is set to 2604 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.547
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.547
+!MESSAGE System property http.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.547
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.548
+!MESSAGE System property https.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.548
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.548
+!MESSAGE System property socksProxyPort is set to 2604 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.550
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.550
+!MESSAGE System property http.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.551
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.551
+!MESSAGE System property https.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.551
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.551
+!MESSAGE System property socksProxyPort is set to 2604 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.600
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.600
+!MESSAGE System property http.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.601
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.601
+!MESSAGE System property https.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.601
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.601
+!MESSAGE System property socksProxyPort is set to 2604 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.602
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.602
+!MESSAGE System property http.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.602
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.603
+!MESSAGE System property https.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.603
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.603
+!MESSAGE System property socksProxyPort is set to 2604 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.603
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.604
+!MESSAGE System property http.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.604
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.604
+!MESSAGE System property https.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.605
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.605
+!MESSAGE System property socksProxyPort is set to 2604 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.605
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.605
+!MESSAGE System property http.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.606
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.606
+!MESSAGE System property https.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.606
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.606
+!MESSAGE System property socksProxyPort is set to 2604 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.607
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.607
+!MESSAGE System property http.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.607
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.608
+!MESSAGE System property https.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.608
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.608
+!MESSAGE System property socksProxyPort is set to 2604 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.608
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.609
+!MESSAGE System property http.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.609
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.609
+!MESSAGE System property https.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.609
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.609
+!MESSAGE System property socksProxyPort is set to 2604 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.610
+!MESSAGE System property http.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.610
+!MESSAGE System property http.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.610
+!MESSAGE System property https.proxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.610
+!MESSAGE System property https.proxyPort is set to 2605 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.611
+!MESSAGE System property socksProxyHost is set to 127.0.0.1 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2022-11-01 02:42:28.611
+!MESSAGE System property socksProxyPort is set to 2604 but should not be set.
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-11-01 02:43:04.960
+!MESSAGE Indexed 'FreeRTOS_Simple_LED_Blink' (17 sources, 78 headers) in 2.34 sec: 3,642 declarations; 13,147 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.012%)

@@ -1,0 +1,231 @@
+STM32CubeIDE Settings
+
+Click RCC > High Speed Clock (HSE) to Crystal/Ceramic Resonator
+
+Click Clock Configuration tab > HCLK (MHz) to 72
+
+Click Pinout and Configuration tab
+
+Click Timer > Click TIM1 >
+
+Clock Source set to Internal Clock
+
+Configuration > Parameter Settings >
+
+Prescaler set to 71
+
+Set PB11 to GPIO_EXTI11
+
+Click System Core > Click NVIC > EXTI line[15-10] interrupt > Enabled (Tick)
+
+Click System Core > Click GPIO > Select PB11 > GPIO Mode to ...
+
+External Interrupt Mode with Falling Edge trigger detection
+
+Click connectivity --> Click I2C1
+
+For I2C select I2C
+
+Configuration --> Parameter Settings
+
+For I2C speed select Fast Mode
+
+Libraries
+
+Inside Core/Inc Folder
+fonts.h ssd1306.h 
+Inside Core/Src Folder
+fonts.c ssd1306.c 
+
+Additional code on top of STM32CubeIDE generated code
+/* USER CODE BEGIN Includes */
+#include "fonts.h"
+#include "ssd1306.h"
+/* USER CODE END Includes */
+
+/* USER CODE BEGIN PV */
+uint32_t tempCode;
+uint8_t bitIndex;
+uint8_t cmd;
+uint8_t cmdli;
+uint32_t code;
+/* USER CODE END PV */
+
+  /* USER CODE BEGIN 2 */
+  SSD1306_Init();
+  HAL_TIM_Base_Start(&htim1);
+  __HAL_TIM_SET_COUNTER(&htim1, 0);
+  /* USER CODE END 2 */
+
+/* USER CODE BEGIN 4 */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if(GPIO_Pin == GPIO_PIN_11)
+  {
+    if (__HAL_TIM_GET_COUNTER(&htim1) > 8000)
+    {
+      tempCode = 0;
+      bitIndex = 0;
+    }
+    else if (__HAL_TIM_GET_COUNTER(&htim1) > 1700)
+    {
+      tempCode |= (1UL << (31-bitIndex));   // write 1
+      bitIndex++;
+    }
+    else if (__HAL_TIM_GET_COUNTER(&htim1) > 1000)
+    {
+      tempCode &= ~(1UL << (31-bitIndex));  // write 0
+      bitIndex++;
+    }
+    if(bitIndex == 32)
+    {
+      cmdli = ~tempCode; // Logical inverted last 8 bits
+      cmd = tempCode >> 8; // Second last 8 bits
+      if(cmdli == cmd) // Check for errors
+      {
+        code = tempCode; // If no bit errors
+        // Do your main work HERE
+        SSD1306_Clear();
+        SSD1306_GotoXY (0, 20);
+        char snum[10];
+        itoa(code, snum, 10);
+        SSD1306_Puts (snum, &Font_11x18, 1);				
+        SSD1306_UpdateScreen();
+      }
+      bitIndex = 0;
+    }
+    __HAL_TIM_SET_COUNTER(&htim1, 0);
+  }
+}
+/* USER CODE END 4 */
+
+
+Updated code for USER CODE 4
+/* USER CODE BEGIN 4 */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if(GPIO_Pin == GPIO_PIN_11)
+  {
+    if (__HAL_TIM_GET_COUNTER(&htim1) > 8000)
+    {
+      tempCode = 0;
+      bitIndex = 0;
+    }
+    else if (__HAL_TIM_GET_COUNTER(&htim1) > 1700)
+    {
+      tempCode |= (1UL << (31-bitIndex));   // write 1
+      bitIndex++;
+    }
+    else if (__HAL_TIM_GET_COUNTER(&htim1) > 1000)
+    {
+      tempCode &= ~(1UL << (31-bitIndex));  // write 0
+      bitIndex++;
+    }
+    if(bitIndex == 32)
+    {
+      cmdli = ~tempCode; // Logical inverted last 8 bits
+      cmd = tempCode >> 8; // Second last 8 bits
+      if(cmdli == cmd) // Check for errors
+      {
+        code = tempCode; // If no bit errors
+        // Do your main work HERE
+        SSD1306_Clear();
+        SSD1306_GotoXY (0, 20);
+        switch (code)
+        {
+          case (16753245):
+            SSD1306_Puts ("CH-", &Font_16x26, 1);
+            break;
+
+          case (16736925):
+            SSD1306_Puts ("CH", &Font_16x26, 1);
+            break;
+
+          case (16769565):
+            SSD1306_Puts ("CH+", &Font_16x26, 1);
+            break;
+
+          case (16720605):
+            SSD1306_Puts ("|<<", &Font_16x26, 1);
+            break;
+
+          case (16712445):
+            SSD1306_Puts (">>|", &Font_16x26, 1);
+            break;
+
+          case (16761405):
+            SSD1306_Puts (">||", &Font_16x26, 1);
+            break;
+
+          case (16769055):
+            SSD1306_Puts ("-", &Font_16x26, 1);
+            break;
+
+          case (16754775):
+            SSD1306_Puts ("+", &Font_16x26, 1);
+            break;
+
+          case (16748655):
+            SSD1306_Puts ("EQ", &Font_16x26, 1);
+            break;
+
+          case (16738455):
+            SSD1306_Puts ("0", &Font_16x26, 1);
+            break;
+
+          case (16750695):
+            SSD1306_Puts ("100+", &Font_16x26, 1);
+            break;
+
+          case (16756815):
+            SSD1306_Puts ("200+", &Font_16x26, 1);
+            break;
+
+          case (16724175):
+            SSD1306_Puts ("1", &Font_16x26, 1);
+            break;
+
+          case (16718055):
+            SSD1306_Puts ("2", &Font_16x26, 1);
+            break;
+
+          case (16743045):
+            SSD1306_Puts ("3", &Font_16x26, 1);
+            break;
+
+          case (16716015):
+            SSD1306_Puts ("4", &Font_16x26, 1);
+            break;
+
+          case (16726215):
+            SSD1306_Puts ("5", &Font_16x26, 1);
+            break;
+
+          case (16734885):
+            SSD1306_Puts ("6", &Font_16x26, 1);
+            break;
+
+          case (16728765):
+            SSD1306_Puts ("7", &Font_16x26, 1);
+            break;
+
+          case (16730805):
+            SSD1306_Puts ("8", &Font_16x26, 1);
+            break;
+
+          case (16732845):
+            SSD1306_Puts ("9", &Font_16x26, 1);
+            break;
+
+          default :
+            break;
+        }
+      SSD1306_UpdateScreen();
+      }
+    bitIndex = 0;
+    }
+  __HAL_TIM_SET_COUNTER(&htim1, 0);
+  }
+}
+/* USER CODE END 4 */
+

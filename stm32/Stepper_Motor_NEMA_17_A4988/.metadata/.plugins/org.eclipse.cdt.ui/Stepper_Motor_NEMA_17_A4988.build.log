@@ -1,0 +1,10 @@
+17:20:19 **** Incremental Build of configuration Debug for project Stepper_Motor_NEMA_17_A4988 ****
+make -j8 all 
+arm-none-eabi-size   Stepper_Motor_NEMA_17_A4988.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6432	     20	   1644	   8096	   1fa0	Stepper_Motor_NEMA_17_A4988.elf
+Finished building: default.size.stdout
+ 
+
+17:20:19 Build Finished. 0 errors, 0 warnings. (took 205ms)
+

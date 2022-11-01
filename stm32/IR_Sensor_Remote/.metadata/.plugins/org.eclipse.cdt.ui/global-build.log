@@ -1,0 +1,63 @@
+06:36:41 **** Incremental Build of configuration Debug for project IR_Sensor_Remote ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "IR_Sensor_Remote.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\github\mc\stm32\IR_Sensor_Remote\IR_Sensor_Remote\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="IR_Sensor_Remote.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: IR_Sensor_Remote.elf
+ 
+arm-none-eabi-size   IR_Sensor_Remote.elf 
+arm-none-eabi-objdump -h -S  IR_Sensor_Remote.elf  > "IR_Sensor_Remote.list"
+   text	   data	    bss	    dec	    hex	filename
+  16836	     28	   2772	  19636	   4cb4	IR_Sensor_Remote.elf
+Finished building: default.size.stdout
+ 
+Finished building: IR_Sensor_Remote.list
+ 
+06:36:51 **** Incremental Build of configuration Debug for project IR_Sensor_Remote ****
+make -j8 all 
+arm-none-eabi-size   IR_Sensor_Remote.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16836	     28	   2772	  19636	   4cb4	IR_Sensor_Remote.elf
+Finished building: default.size.stdout
+ 
+06:43:30 **** Incremental Build of configuration Debug for project IR_Sensor_Remote ****
+make -j8 all 
+arm-none-eabi-size   IR_Sensor_Remote.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16836	     28	   2772	  19636	   4cb4	IR_Sensor_Remote.elf
+Finished building: default.size.stdout
+ 
+06:48:19 **** Incremental Build of configuration Debug for project IR_Sensor_Remote ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "IR_Sensor_Remote.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\github\mc\stm32\IR_Sensor_Remote\IR_Sensor_Remote\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="IR_Sensor_Remote.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: IR_Sensor_Remote.elf
+ 
+arm-none-eabi-size   IR_Sensor_Remote.elf 
+arm-none-eabi-objdump -h -S  IR_Sensor_Remote.elf  > "IR_Sensor_Remote.list"
+   text	   data	    bss	    dec	    hex	filename
+  10424	     20	   2764	  13208	   3398	IR_Sensor_Remote.elf
+Finished building: default.size.stdout
+ 
+Finished building: IR_Sensor_Remote.list
+ 
+06:49:53 **** Incremental Build of configuration Debug for project IR_Sensor_Remote ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "IR_Sensor_Remote.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\github\mc\stm32\IR_Sensor_Remote\IR_Sensor_Remote\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="IR_Sensor_Remote.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: IR_Sensor_Remote.elf
+ 
+arm-none-eabi-size   IR_Sensor_Remote.elf 
+arm-none-eabi-objdump -h -S  IR_Sensor_Remote.elf  > "IR_Sensor_Remote.list"
+   text	   data	    bss	    dec	    hex	filename
+  10688	     20	   2772	  13480	   34a8	IR_Sensor_Remote.elf
+Finished building: default.size.stdout
+ 
+Finished building: IR_Sensor_Remote.list
+ 
+06:50:03 **** Incremental Build of configuration Debug for project IR_Sensor_Remote ****
+make -j8 all 
+arm-none-eabi-size   IR_Sensor_Remote.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10688	     20	   2772	  13480	   34a8	IR_Sensor_Remote.elf
+Finished building: default.size.stdout
+ 

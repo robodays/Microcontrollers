@@ -1,0 +1,140 @@
+https://www.youtube.com/watch?v=JeDwEv51wFo
+
+
+Следующий расчетный лист в основном полезен для классического CAN, как определено в ISO-11898 до 2015 года. 
+Для нового CAN FD, как определено в ISO-11898: 2015, ведется работа. CiA предоставляет документ CiA 601-3 CAN, 
+содержащий рекомендации по синхронизации битов.
+
+На этой странице вычисляются возможные значения регистров для программирования контроллеров CAN для типичных 
+скоростей передачи данных путем ввода входной тактовой частоты в устройство предварительного масштабирования 
+тактовых импульсов CAN, желаемого местоположения точки выборки и выбора семейства CAN.
+http://www.bittiming.can-wiki.info/
+
+
+
+main.c
+
+/* USER CODE BEGIN PV */
+CAN_TxHeaderTypeDef pTxHeader;
+CAN_RxHeaderTypeDef pRxHeader;
+uint32_t  TxMailbox;
+uint8_t i=0,r;
+uint8_t TX_data[8],RX_data[8];
+CAN_FilterTypeDef sFilterConfig;
+/* USER CODE END PV */
+
+
+  /* USER CODE BEGIN 2 */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_SET);
+  /* USER CODE END 2 */
+
+
+
+CAN
+  /* USER CODE BEGIN CAN_Init 2 */
+  //
+    pTxHeader.DLC = 4;
+    pTxHeader.IDE = CAN_ID_STD;
+    pTxHeader.RTR = CAN_RTR_DATA;
+    pTxHeader.StdId = 0x0002;
+    pTxHeader.TransmitGlobalTime = DISABLE;
+  //
+    sFilterConfig.FilterBank = 0;
+    sFilterConfig.FilterMode = CAN_FILTERMODE_IDLIST;
+    sFilterConfig.FilterFIFOAssignment = CAN_RX_FIFO0;
+    sFilterConfig.SlaveStartFilterBank = 0;
+    sFilterConfig.FilterIdHigh = 0x00fe<<5;
+    sFilterConfig.FilterIdLow = 0x0002<<5;
+    sFilterConfig.FilterMaskIdHigh = 0x0003<<5;
+    sFilterConfig.FilterMaskIdLow = 0x0004<<5;
+    sFilterConfig.FilterScale = CAN_FILTERSCALE_16BIT;
+    sFilterConfig.FilterActivation = ENABLE;
+    
+   if (HAL_CAN_ConfigFilter(&hcan, &sFilterConfig)!= HAL_OK)
+    {
+      // Filter configuration Error 
+      Error_Handler();
+    }
+    
+    if(HAL_CAN_Start(&hcan)!= HAL_OK)
+     {
+      //Start Error 
+      Error_Handler();
+    } 
+    /* Activate CAN RX notification */
+    if (HAL_CAN_ActivateNotification(&hcan, CAN_IT_RX_FIFO0_MSG_PENDING | CAN_IT_TX_MAILBOX_EMPTY) != HAL_OK)
+    {
+      /* Notification Error */
+      Error_Handler();
+    }
+  /* USER CODE END CAN_Init 2 */
+
+
+
+stm32f1xx_it.c
+
+/* USER CODE BEGIN PV */
+extern CAN_TxHeaderTypeDef pTxHeader;
+extern CAN_RxHeaderTypeDef pRxHeader;
+extern uint32_t TxMailbox;
+extern uint8_t i;
+extern uint8_t TX_data[8];
+/* USER CODE END PV */
+
+
+/**
+  * @brief This function handles EXTI line1 interrupt.
+  */
+void EXTI1_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI1_IRQn 0 */
+	for (int n = 0; n < 1000000; n++)
+		;
+	if (i) {
+		i = 0;
+	} else {
+		i = 1;
+	}
+	TX_data[0] = i;
+	TX_data[1] = 2;
+	TX_data[2] = 3;
+	TX_data[3] = 4;
+	HAL_CAN_AddTxMessage(&hcan, &pTxHeader, TX_data, &TxMailbox);
+  /* USER CODE END EXTI1_IRQn 0 */
+
+
+main.c
+
+/* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+		r = RX_data[0];
+		if (r) {
+			HAL_GPIO_TogglePin(LedBlue_GPIO_Port, LedBlue_Pin);
+			HAL_Delay(500);
+		} else {
+			HAL_GPIO_WritePin(LedBlue_GPIO_Port, LedBlue_Pin, GPIO_PIN_SET);
+		}
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */
+
+
+
+
+/* USER CODE BEGIN 4 */
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) {
+	/* Get RX message */
+	if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &pRxHeader, RX_data)
+			!= HAL_OK) {
+		/* Reception Error */
+		Error_Handler();
+	}
+}
+void HAL_CAN_TxMailbox0CompleteCallback(CAN_HandleTypeDef *hcan) {
+//	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_2);
+}
+/* USER CODE END 4 */

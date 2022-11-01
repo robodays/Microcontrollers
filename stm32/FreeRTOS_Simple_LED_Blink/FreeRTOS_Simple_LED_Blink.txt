@@ -1,0 +1,61 @@
+STM32CubeIDE Settings
+Click SYS > Timebase Source > Select any timers (TIM3)
+
+Click RCC > High Speed Clock (HSE) to Crystal/Ceramic Resonator
+
+Click Clock Configuration tab > HCLK (MHz) to 72
+
+Click Pinout and Configuration tab
+
+Click Middelware > Click FREERTOS > Select Interface to CMSIS_V1
+
+Configuration > Advanced Settings > USE_NEWLIB_REENTRANT (Enabled)
+
+Configuration > Tasks and Queues
+
+Rename the DefaultTask to RedLED
+Priority osNormal
+Entry Function StartRedLED
+
+Create two more tasks named GreenLED and BlueLED
+
+Change Priority to osPriorityNormal for all tasks
+
+Set PA2, PA3 and PA4 GPIO_Output
+
+Additional code on top of STM32CubeIDE generated code
+void StartRedLED(void const * argument)
+{
+  /* USER CODE BEGIN 5 */
+  /* Infinite loop */
+  for(;;)
+  {
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_2);
+    osDelay(200);
+  }
+  /* USER CODE END 5 */
+}
+
+void StartGreenLED(void const * argument)
+{
+  /* USER CODE BEGIN StartGreenLED */
+  /* Infinite loop */
+  for(;;)
+  {
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
+    osDelay(300);
+  }
+  /* USER CODE END StartGreenLED */
+}
+
+void StartBlueLED(void const * argument)
+{
+  /* USER CODE BEGIN StartBlueLED */
+  /* Infinite loop */
+  for(;;)
+  {
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_4);
+    osDelay(700);
+  }
+  /* USER CODE END StartBlueLED */
+}
