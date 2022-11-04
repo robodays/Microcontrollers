@@ -1,0 +1,31 @@
+!SESSION 2022-11-02 18:51:04.739 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-11-02 18:51:32.406
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-11-02 18:51:32.476
+!MESSAGE Log4j initialized with config file D:\github\mc\stm32\UART_WIFI_ESP8266\TUT_ESP_WEBS_SEND_RECEIVE_F4\TUT_ESP_WEBS_SEND_RECEIVE_F4\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-11-02 18:51:35.233
+!MESSAGE Started RMI Server, listening on port 41338
+!SESSION 2022-11-02 18:53:09.386 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Framework arguments:  D:\github\mc\stm32\UART_WIFI_ESP8266\TUT_ESP_WEBS_SEND_RECEIVE_F4\TUT_ESP_WEBS_SEND_RECEIVE_F4\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 D:\github\mc\stm32\UART_WIFI_ESP8266\TUT_ESP_WEBS_SEND_RECEIVE_F4\TUT_ESP_WEBS_SEND_RECEIVE_F4\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-11-02 18:53:17.844
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-11-02 18:53:17.906
+!MESSAGE Log4j initialized with config file D:\github\mc\stm32\UART_WIFI_ESP8266\TUT_ESP_WEBS_SEND_RECEIVE_F4\TUT_ESP_WEBS_SEND_RECEIVE_F4\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-11-02 18:53:21.334
+!MESSAGE Started RMI Server, listening on port 41337
