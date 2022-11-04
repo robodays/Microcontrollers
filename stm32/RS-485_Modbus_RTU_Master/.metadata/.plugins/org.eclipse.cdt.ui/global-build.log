@@ -1,0 +1,7 @@
+05:35:24 **** Incremental Build of configuration Debug for project RS-485_Modbus_RTU_Master ****
+make -j8 all 
+arm-none-eabi-size   RS-485_Modbus_RTU_Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16724	    148	   2348	  19220	   4b14	RS-485_Modbus_RTU_Master.elf
+Finished building: default.size.stdout
+ 

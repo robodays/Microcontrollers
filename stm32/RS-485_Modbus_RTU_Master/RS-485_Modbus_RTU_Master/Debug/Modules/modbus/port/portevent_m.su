@@ -1,0 +1,11 @@
+../Modules/modbus/port/portevent_m.c:42:6:xMBMasterPortEventInit	4	static
+../Modules/modbus/port/portevent_m.c:51:6:xMBMasterPortEventPost	16	static
+../Modules/modbus/port/portevent_m.c:61:6:xMBMasterPortEventGet	24	static
+../Modules/modbus/port/portevent_m.c:83:6:vMBMasterOsResInit	4	static
+../Modules/modbus/port/portevent_m.c:98:6:xMBMasterRunResTake	16	static
+../Modules/modbus/port/portevent_m.c:111:6:vMBMasterRunResRelease	4	static
+../Modules/modbus/port/portevent_m.c:128:6:vMBMasterErrorCBRespondTimeout	16	static
+../Modules/modbus/port/portevent_m.c:137:6:vMBMasterErrorCBReceiveData	16	static
+../Modules/modbus/port/portevent_m.c:146:6:vMBMasterErrorCBExecuteFunction	16	static
+../Modules/modbus/port/portevent_m.c:155:6:vMBMasterCBRequestScuuess	8	static
+../Modules/modbus/port/portevent_m.c:163:21:eMBMasterWaitRequestFinish	16	static

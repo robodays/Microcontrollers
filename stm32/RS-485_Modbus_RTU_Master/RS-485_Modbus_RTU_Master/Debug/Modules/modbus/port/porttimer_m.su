@@ -1,0 +1,7 @@
+../Modules/modbus/port/porttimer_m.c:50:6:xMBMasterPortTimersInit	16	static
+../Modules/modbus/port/porttimer_m.c:59:13:vMBMasterPortTimersT35Enable	8	static
+../Modules/modbus/port/porttimer_m.c:69:6:vMBMasterPortTimersConvertDelayEnable	8	static
+../Modules/modbus/port/porttimer_m.c:77:6:vMBMasterPortTimersRespondTimeoutEnable	8	static
+../Modules/modbus/port/porttimer_m.c:85:13:vMBMasterPortTimersDisable	8	static
+../Modules/modbus/port/porttimer_m.c:93:13:prvvTIMERExpiredISR	8	static
+../Modules/modbus/port/porttimer_m.c:101:6:HAL_TIM_PeriodElapsedCallback	16	static

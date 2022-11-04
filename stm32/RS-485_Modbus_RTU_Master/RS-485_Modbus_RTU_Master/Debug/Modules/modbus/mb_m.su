@@ -1,0 +1,12 @@
+../Modules/modbus/mb_m.c:133:1:eMBMasterInit	24	static
+../Modules/modbus/mb_m.c:177:1:eMBMasterClose	16	static
+../Modules/modbus/mb_m.c:196:1:eMBMasterEnable	16	static
+../Modules/modbus/mb_m.c:214:1:eMBMasterDisable	16	static
+../Modules/modbus/mb_m.c:236:1:eMBMasterIsEstablished	4	static
+../Modules/modbus/mb_m.c:250:1:eMBMasterPoll	40	static
+../Modules/modbus/mb_m.c:375:6:xMBMasterGetCBRunInMasterMode	4	static
+../Modules/modbus/mb_m.c:380:6:vMBMasterSetCBRunInMasterMode	16	static
+../Modules/modbus/mb_m.c:385:7:ucMBMasterGetDestAddress	4	static
+../Modules/modbus/mb_m.c:390:6:vMBMasterSetDestAddress	16	static
+../Modules/modbus/mb_m.c:395:25:eMBMasterGetErrorType	4	static
+../Modules/modbus/mb_m.c:400:6:vMBMasterSetErrorType	16	static

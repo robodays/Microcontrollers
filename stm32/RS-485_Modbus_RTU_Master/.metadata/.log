@@ -1,0 +1,21 @@
+!SESSION 2022-11-04 03:57:45.406 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-11-04 03:58:00.238
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-11-04 03:58:00.301
+!MESSAGE Log4j initialized with config file D:\github\mc\stm32\RS-485_Modbus_RTU_Master\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-11-04 03:58:02.722
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-11-04 03:58:56.103
+!MESSAGE Indexed 'RS-485_Modbus_RTU_Master' (17 sources, 78 headers) in 2.76 sec: 3,642 declarations; 13,147 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.012%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-11-04 04:19:09.501
+!MESSAGE Indexed 'RS-485_Modbus_RTU_Master' (34 sources, 98 headers) in 1.32 sec: 6,477 declarations; 35,650 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0047%)
