@@ -1,0 +1,10 @@
+00:35:46 **** Incremental Build of configuration Debug for project Modbus_master_qurey ****
+make -j8 all 
+arm-none-eabi-size   Modbus_master_qurey.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8976	     20	   1700	  10696	   29c8	Modbus_master_qurey.elf
+Finished building: default.size.stdout
+ 
+
+00:35:46 Build Finished. 0 errors, 0 warnings. (took 258ms)
+

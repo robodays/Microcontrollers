@@ -2627,3 +2627,13 @@
 2022-10-24 15:25:13,747 [INFO] ApiDb:447 - User favorites MCUs=[]
 2022-10-24 15:25:15,082 [ERROR] ConfigurationRetriever:139 - IOException on connection: connect timed out
 2022-10-25 00:40:47,971 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 
+2022-11-05 16:08:25,721 [INFO] Activator:177 - 
+
+
+2022-11-05 16:08:25,739 [INFO] Activator:178 - !SESSION log4j initialized
+2022-11-05 16:08:52,561 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2022-11-05 16:08:52,562 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: Defaulting to no-operation (NOP) logger implementation
+2022-11-05 16:08:52,563 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2022-11-05 16:13:05,534 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Warning: NLS missing message: ExternalToolsPreferencePage_External_tool_project_builders_migration_2 in: org.eclipse.ui.externaltools.internal.ui.ExternalToolsUIMessages
+2022-11-05 16:13:05,537 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Warning: NLS missing message: ExternalToolsPreferencePage_Prompt_before_migrating_3 in: org.eclipse.ui.externaltools.internal.ui.ExternalToolsUIMessages
+2022-11-05 16:13:05,539 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Warning: NLS missing message: ExternalToolsPreferencePage_1 in: org.eclipse.ui.externaltools.internal.ui.ExternalToolsUIMessages

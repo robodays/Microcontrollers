@@ -1,0 +1,10 @@
+23:36:12 **** Incremental Build of configuration Debug for project RS-485_Modbus_RTU_Slave ****
+make -j8 all 
+arm-none-eabi-size   RS-485_Modbus_RTU_Slave.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5196	     20	   1636	   6852	   1ac4	RS-485_Modbus_RTU_Slave.elf
+Finished building: default.size.stdout
+ 
+
+23:36:12 Build Finished. 0 errors, 0 warnings. (took 221ms)
+

@@ -1,0 +1,18 @@
+!SESSION 2022-11-07 23:41:33.399 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-11-07 23:41:50.268
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-11-07 23:41:50.323
+!MESSAGE Log4j initialized with config file D:\github\mc\stm32\RS-485\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-11-07 23:41:53.098
+!MESSAGE Started RMI Server, listening on port 41338
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-11-07 23:42:58.814
+!MESSAGE Indexed 'Modbus_master_qurey' (21 sources, 109 headers) in 3,39 sec: 8 262 declarations; 30 730 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0,48 %)

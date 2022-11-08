@@ -1,4 +1,18 @@
-03:57:25 **** Build of configuration Debug for project RS-485_Modbus_RTU_Slave ****
+19:49:45 **** Incremental Build of configuration Debug for project RS-485_Modbus_RTU_Slave ****
+make -j8 all 
+arm-none-eabi-size   RS-485_Modbus_RTU_Slave.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21056	    268	   2100	  23424	   5b80	RS-485_Modbus_RTU_Slave.elf
+Finished building: default.size.stdout
+ 
+19:49:56 **** Incremental Build of configuration Debug for project RS-485_Modbus_RTU_Slave ****
+make -j8 all 
+arm-none-eabi-size   RS-485_Modbus_RTU_Slave.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21056	    268	   2100	  23424	   5b80	RS-485_Modbus_RTU_Slave.elf
+Finished building: default.size.stdout
+ 
+20:07:38 **** Incremental Build of configuration Debug for project RS-485_Modbus_RTU_Slave ****
 make -j8 all 
 arm-none-eabi-size   RS-485_Modbus_RTU_Slave.elf 
    text	   data	    bss	    dec	    hex	filename
