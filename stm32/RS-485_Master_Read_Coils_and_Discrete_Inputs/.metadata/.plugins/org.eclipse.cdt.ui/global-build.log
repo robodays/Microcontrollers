@@ -1,0 +1,85 @@
+15:17:46 **** Incremental Build of configuration Debug for project RS-485_Master_Read_Coils_and_Discrete_Inputs ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "RS-485_Master_Read_Coils_and_Discrete_Inputs.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\github\mc\stm32\RS-485_Master_Read_Coils_and_Discrete_Inputs\RS-485_Master_Read_Coils_and_Discrete_Inputs\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RS-485_Master_Read_Coils_and_Discrete_Inputs.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: RS-485_Master_Read_Coils_and_Discrete_Inputs.elf
+ 
+arm-none-eabi-size   RS-485_Master_Read_Coils_and_Discrete_Inputs.elf 
+arm-none-eabi-objdump -h -S  RS-485_Master_Read_Coils_and_Discrete_Inputs.elf  > "RS-485_Master_Read_Coils_and_Discrete_Inputs.list"
+   text	   data	    bss	    dec	    hex	filename
+   8960	     20	   1724	  10704	   29d0	RS-485_Master_Read_Coils_and_Discrete_Inputs.elf
+Finished building: default.size.stdout
+ 
+Finished building: RS-485_Master_Read_Coils_and_Discrete_Inputs.list
+ 
+15:24:55 **** Incremental Build of configuration Debug for project RS-485_Master_Read_Coils_and_Discrete_Inputs ****
+make -j8 all 
+arm-none-eabi-size   RS-485_Master_Read_Coils_and_Discrete_Inputs.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8960	     20	   1724	  10704	   29d0	RS-485_Master_Read_Coils_and_Discrete_Inputs.elf
+Finished building: default.size.stdout
+ 
+15:28:25 **** Incremental Build of configuration Debug for project RS-485_Master_Read_Coils_and_Discrete_Inputs ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:61:1: error: unknown type name 'bool'
+   61 | bool Data[16];
+      | ^~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:29:49 **** Incremental Build of configuration Debug for project RS-485_Master_Read_Coils_and_Discrete_Inputs ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "RS-485_Master_Read_Coils_and_Discrete_Inputs.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\github\mc\stm32\RS-485_Master_Read_Coils_and_Discrete_Inputs\RS-485_Master_Read_Coils_and_Discrete_Inputs\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RS-485_Master_Read_Coils_and_Discrete_Inputs.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: RS-485_Master_Read_Coils_and_Discrete_Inputs.elf
+ 
+arm-none-eabi-size   RS-485_Master_Read_Coils_and_Discrete_Inputs.elf 
+arm-none-eabi-objdump -h -S  RS-485_Master_Read_Coils_and_Discrete_Inputs.elf  > "RS-485_Master_Read_Coils_and_Discrete_Inputs.list"
+   text	   data	    bss	    dec	    hex	filename
+   8972	     20	   1676	  10668	   29ac	RS-485_Master_Read_Coils_and_Discrete_Inputs.elf
+Finished building: default.size.stdout
+ 
+Finished building: RS-485_Master_Read_Coils_and_Discrete_Inputs.list
+ 
+15:30:08 **** Incremental Build of configuration Debug for project RS-485_Master_Read_Coils_and_Discrete_Inputs ****
+make -j8 all 
+arm-none-eabi-size   RS-485_Master_Read_Coils_and_Discrete_Inputs.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8972	     20	   1676	  10668	   29ac	RS-485_Master_Read_Coils_and_Discrete_Inputs.elf
+Finished building: default.size.stdout
+ 
+15:30:20 **** Incremental Build of configuration Debug for project RS-485_Master_Read_Coils_and_Discrete_Inputs ****
+make -j8 all 
+arm-none-eabi-size   RS-485_Master_Read_Coils_and_Discrete_Inputs.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8972	     20	   1676	  10668	   29ac	RS-485_Master_Read_Coils_and_Discrete_Inputs.elf
+Finished building: default.size.stdout
+ 
+15:32:25 **** Incremental Build of configuration Debug for project RS-485_Master_Read_Coils_and_Discrete_Inputs ****
+make -j8 all 
+arm-none-eabi-size   RS-485_Master_Read_Coils_and_Discrete_Inputs.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8972	     20	   1676	  10668	   29ac	RS-485_Master_Read_Coils_and_Discrete_Inputs.elf
+Finished building: default.size.stdout
+ 
+15:35:21 **** Incremental Build of configuration Debug for project RS-485_Master_Read_Coils_and_Discrete_Inputs ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "RS-485_Master_Read_Coils_and_Discrete_Inputs.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\github\mc\stm32\RS-485_Master_Read_Coils_and_Discrete_Inputs\RS-485_Master_Read_Coils_and_Discrete_Inputs\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RS-485_Master_Read_Coils_and_Discrete_Inputs.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: RS-485_Master_Read_Coils_and_Discrete_Inputs.elf
+ 
+arm-none-eabi-size   RS-485_Master_Read_Coils_and_Discrete_Inputs.elf 
+arm-none-eabi-objdump -h -S  RS-485_Master_Read_Coils_and_Discrete_Inputs.elf  > "RS-485_Master_Read_Coils_and_Discrete_Inputs.list"
+   text	   data	    bss	    dec	    hex	filename
+   8972	     20	   1676	  10668	   29ac	RS-485_Master_Read_Coils_and_Discrete_Inputs.elf
+Finished building: default.size.stdout
+ 
+Finished building: RS-485_Master_Read_Coils_and_Discrete_Inputs.list
+ 
+15:36:53 **** Incremental Build of configuration Debug for project RS-485_Master_Read_Coils_and_Discrete_Inputs ****
+make -j8 all 
+arm-none-eabi-size   RS-485_Master_Read_Coils_and_Discrete_Inputs.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8972	     20	   1676	  10668	   29ac	RS-485_Master_Read_Coils_and_Discrete_Inputs.elf
+Finished building: default.size.stdout
+ 
